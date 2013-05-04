@@ -1,5 +1,7 @@
 Cport::Application.routes.draw do
   
+  #get "users/new"
+
   root :to => 'static_pages#home'
   
   match '/home',    to: 'static_pages#home'
@@ -9,6 +11,8 @@ Cport::Application.routes.draw do
   match '/about',   to: 'static_pages#about'
   
   match '/contacts', to: 'static_pages#contacts'
+  
+  match '/singup', to: 'users#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

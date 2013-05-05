@@ -1,0 +1,14 @@
+<h1>Пользователи</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= user.name %>
+      <%= link_to "Профиль", user %>
+    </li>
+  <% end %>
+</ul>
+
+<%= will_paginate %>

@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "кредитный портфолио", root_path, id: "logo" %>
@@ -10,11 +10,15 @@
             <li><%= link_to "Пользователи", users_path %></li>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%= @current_user.name %> <b class="caret"></b>
+                <i class="icon-user"> </i> <%= @current_user.name %> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Профиль", current_user %></li>
                 <li><%= link_to "Настройки", edit_user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Портфолио", portfolios_path %>
+                </li>
                 <li class="divider"></li>
                 <li>
                   <%= link_to "Выйти", signout_path, method: "delete" %>

@@ -1,9 +1,26 @@
 <div class="center hero-unit">
+  
   <h1>Откройте мир больших возможностей!</h1>
-  <h2><strong>Кредитный портфолио</strong> - мощный аргумент в руках заемщика!</h2>
+  
+  <hr>
+  
+  <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="active item"><p class="lead"><strong>Кредитный портфолио</strong> - мощный аргумент в руках заемщика!</p></div>
+      <div class="item"><p class="lead">Всего три простых шага и Ваши мечты станут реальностью!</p></div>
+      <div class="item"><p class="lead">Загрузите нашу <%= link_to "Презентацию",    '#' %> и ознакомьтесь с <%= link_to "условиями участия",    '#' %>!</p></div>
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+  
+  <hr>
+  
    <%= link_to "Открыть доступ!", signin_path, class: "btn btn-large btn-primary" %>
-  <hr>
-  <p>Всего три простых шага и Ваши мечты станут реальностью!</p>
-  <hr>
-  <p>Все еще сомневаетесь? Загрузите нашу <%= link_to "Презентацию",    '#' %> и ознакомьтесь с <%= link_to "условиями участия",    '#' %>!</p>
+  
+  
+  
+  
 </div>

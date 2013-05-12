@@ -1,4 +1,6 @@
 Cport::Application.routes.draw do
+
+  match '/portfolios',  to: 'portfolios#index'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

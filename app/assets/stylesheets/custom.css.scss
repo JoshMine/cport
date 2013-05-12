@@ -71,7 +71,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #008f00;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -80,7 +80,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #008f00;
   text-decoration: none;
 }
 
@@ -124,6 +124,32 @@ input {
       border-bottom: 1px solid $grayLighter;
     }
   }
+}
+
+/* Rating */
+
+ .rating {
+
+    font-size: 3.5em;
+    color: #008f00;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Index  */
+    
+ .index {
+
+    font-size: 3.5em;
+    color: #857bb1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    line-height: 1;
 }
 
 /* footer */

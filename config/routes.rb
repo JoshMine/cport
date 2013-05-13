@@ -1,5 +1,9 @@
 Cport::Application.routes.draw do
 
+  get "persons/person"
+
+  get "persons/contact_data"
+
   match '/portfolios',  to: 'portfolios#index'
   
   resources :users

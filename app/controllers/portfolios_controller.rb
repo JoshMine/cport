@@ -1,12 +1,12 @@
 class PortfoliosController < ApplicationController
   
   def index
-    @portfolio = Portfolio.find(params[:id])
+    #@portfolio = Portfolio.find(params[:id])
   end
   
   
   def new
-    
+    @portfolio = Portfolio.new
   end
   
   def create

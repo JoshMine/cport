@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505160520) do
+ActiveRecord::Schema.define(:version => 20130513203717) do
+
+  create_table "contact_data", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "middle_name"
+    t.string   "email"
+    t.string   "m_phone"
+    t.string   "h_phone"
+    t.string   "f_address"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "people", :force => true do |t|
+    t.integer  "portfolio_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "contact_data_id"
+  end
+
+  create_table "portfolios", :force => true do |t|
+    t.boolean  "active"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

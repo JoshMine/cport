@@ -1,13 +1,11 @@
 Cport::Application.routes.draw do
 
-  get "persons/person"
-
-  get "persons/contact_data"
-
   match '/portfolios',  to: 'portfolios#index'
+  match '/portfolios/create',  to: 'portfolios#create'
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :portfolios, only: [:new, :create, :destroy]
   
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'

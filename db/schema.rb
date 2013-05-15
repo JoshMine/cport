@@ -11,18 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130513203717) do
+ActiveRecord::Schema.define(:version => 20130514204826) do
 
   create_table "contact_data", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "middle_name"
     t.string   "email"
     t.string   "m_phone"
     t.string   "h_phone"
     t.string   "f_address"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "people", :force => true do |t|
@@ -30,6 +27,9 @@ ActiveRecord::Schema.define(:version => 20130513203717) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "contact_data_id"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
   end
 
   create_table "portfolios", :force => true do |t|
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20130513203717) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
+    t.integer  "person_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

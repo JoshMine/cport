@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+  project: "Credit Portfolio"
+  home: "Home"
+  help: "Help"
+  signin: "Sign In"
+  signout: "Sign Out"
+  about: "About"
+  contacts: "Contacts"
+  news: "News"

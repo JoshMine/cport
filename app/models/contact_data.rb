@@ -14,9 +14,9 @@
 class ContactData < ActiveRecord::Base
   attr_accessible :email, :f_address, :h_phone, :m_phone
   
-  belongs_to :person
+  belongs_to :participant
   
-  before_save { |contact_data| contact_data.email = email.downcase }
+  # before_save { |contact_data| contact_data.email = email.downcase }
   
 
 end

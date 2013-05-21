@@ -1,0 +1,28 @@
+<%= form_for(@participant) do |f| %>
+  
+  <%= render 'shared/error_messages', object: f.object %>  
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :middle_name %>
+  <%= f.text_field :middle_name %>
+
+  <%= f.label :gender %>
+  <%= f.text_field :gender %>
+
+  <%= f.radio_button(:gender, "male") %>
+  <%= f.label(:gender, "Мужской") %>
+  <%= f.radio_button(:gender, "female") %>
+  <%= f.label(:gender, "Женский") %>
+
+  <%= f.label :date_birth %>
+  <%= f.date_field :date_birth %>
+
+
+  <%= f.submit %>
+
+<% end %>

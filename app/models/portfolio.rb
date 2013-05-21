@@ -10,11 +10,12 @@
 #
 
 class Portfolio < ActiveRecord::Base
-  attr_accessible :active, :user_id 
+  attr_accessible :active, :confirm 
   
-  validates :user_id, presence: true
+  #validates :user_id, presence: true
+  validates :confirm, presence: true
   
   belongs_to :user
-  has_many :person
+  has_many :participants
   
 end

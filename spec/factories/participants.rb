@@ -1,7 +1,9 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :person do
-    portfolio_id 1
+  factory :participant do
+    last_name ""
+    first_name "MyString"
+    middle_name "MyString"
   end
 end

@@ -53,7 +53,24 @@ h1 {
 h2 {
   font-size: 1.7em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #999;
+}
+
+h3 {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #999;
+}
+
+h4 {
+  font-size: 1.3em;
+  letter-spacing: -1px;
+  margin-bottom: 5px;
   text-align: center;
   font-weight: normal;
   color: #999;
@@ -64,6 +81,11 @@ p {
   line-height: 1.7em;
 }
 
+img {
+    position: middle;
+}
+
+
 
 /* header */
 
@@ -71,7 +93,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
+  color: #008f00;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -80,7 +102,7 @@ p {
 }
 
 #logo:hover {
-  color: #fff;
+  color: #008f00;
   text-decoration: none;
 }
 
@@ -124,6 +146,34 @@ input {
       border-bottom: 1px solid $grayLighter;
     }
   }
+}
+
+/* Rating */
+
+ .rating {
+
+    font-size: 3.5em;
+    color: #008f00;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-align: center;
+    padding-top: 9px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+/* Index  */
+    
+ .index {
+
+    font-size: 3.5em;
+    color: #857bb1;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-align: center;
+    padding-top: 9px;
+    font-weight: bold;
+    line-height: 1;
 }
 
 /* footer */

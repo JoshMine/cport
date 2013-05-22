@@ -1,2 +1,16 @@
 <H1>Профиль пользователя</H1>
-<%= @user.name %>, <%= @user.email %>
+<h2><%= @user.name %></H2> 
+
+<p>Email: <%= @user.email %></p>
+
+<%= image_tag @user.avatar.url(:thumb), :class => "img-rounded" %>
+
+<% if !@user.portfolio %>
+
+  <%= link_to "Создать портфолио", portfolio_create_path, class: "btn btn-large btn-primary" %>
+
+<% else %>
+
+  <%= link_to "Портфолио", portfolio_path, class: "btn btn-large btn-primary" %>
+
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130520120014) do
+ActiveRecord::Schema.define(:version => 20130521054806) do
 
   create_table "contact_data", :force => true do |t|
     t.string   "email"
@@ -35,6 +35,31 @@ ActiveRecord::Schema.define(:version => 20130520120014) do
     t.string   "m_phone"
     t.string   "h_phone"
     t.string   "f_address"
+    t.integer  "rating"
+    t.integer  "index"
+  end
+
+  create_table "passports", :force => true do |t|
+    t.integer  "participant_id"
+    t.integer  "series"
+    t.integer  "number"
+    t.string   "issuer"
+    t.string   "dep_code"
+    t.date     "issue_date"
+    t.string   "last_name"
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "gender"
+    t.date     "birth_date"
+    t.string   "birth_place"
+    t.string   "marrital_status"
+    t.string   "official_address"
+    t.string   "doc_file_file_name"
+    t.string   "doc_file_content_type"
+    t.integer  "doc_file_file_size"
+    t.datetime "doc_file_updated_at"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "portfolios", :force => true do |t|

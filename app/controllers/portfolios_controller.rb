@@ -26,7 +26,7 @@ class PortfoliosController < ApplicationController
   def addparticipant
     @portfolio = Portfolio.find_by_user_id(current_user.id)
     @participant = @portfolio.participants.new
-    # if @participant.save
+    #if @participant.save
     #    flash[:success] = "Participant created!!!"
     #    redirect_to portfolio_path # 'contact_data/new' 'person/new' # signin_path
     #  else

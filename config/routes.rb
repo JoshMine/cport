@@ -10,15 +10,15 @@ Cport::Application.routes.draw do
     match '/portfolio/create',  to: 'portfolios#new'
     match '/portfolio/addparticipant', to: 'portfolios#addparticipant'
      
-    #match '/participants',         to: 'participants#index'
+    match '/participants',         to: 'participants#index'
    
     resources :users
     resources :sessions, only: [:new, :create, :destroy]
-    resources :portfolios, only: [:new, :show, :create, :addparticipant, :destroy] do
-      resources :participants do
-           resources :passports
-         end
-    end
+    resources :portfolios, only: [:new, :show, :create, :addparticipant, :destroy] # do
+     # resources :participants do
+     #      resources :passports
+     #    end
+    #end
 
     match '/signup',  to: 'users#new'
     match '/signin',  to: 'sessions#new'

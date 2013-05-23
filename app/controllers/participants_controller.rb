@@ -54,4 +54,8 @@ class ParticipantsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def documents
+    @participant = Participant.find(params[:id])
+  end
 end

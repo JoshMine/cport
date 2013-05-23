@@ -108,7 +108,7 @@ img {
 
 /* forms */
 
-input, textarea, select, .uneditable-input {
+input, textarea, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
   padding: 10px;
@@ -116,7 +116,15 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
-input {
+select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input, select {
   height: auto !important;
 }
 

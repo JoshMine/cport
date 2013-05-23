@@ -6,33 +6,35 @@ Cport::Application.routes.draw do
     
     root :to => 'static_pages#home'
     
+    match '/signup',  to: 'users#new'
+    #match '/profile', to: 'users#show'
+    #match '/settings', to: 'users#edit'
+    match '/signin',  to: 'sessions#new'
+    match '/signout', to: 'sessions#destroy', via: :delete
+    
+
+    match '/home',    to: 'static_pages#home'
+    match '/help',    to: 'static_pages#help'
+    match '/about',   to: 'static_pages#about'
+    match '/contacts', to: 'static_pages#contacts'
+    
     match '/portfolio',         to: 'portfolios#show'
     match '/portfolio/create',  to: 'portfolios#new'
     match '/portfolio/addparticipant', to: 'portfolios#addparticipant'
      
-    match '/participants',         to: 'participants#index'
+    #match '/participants',         to: 'participants#index'
+    
+
    
     resources :users
     resources :sessions, only: [:new, :create, :destroy]
-    resources :portfolios, only: [:new, :show, :create, :addparticipant, :destroy] # do
-     # resources :participants do
-     #      resources :passports
-     #    end
-    #end
-
-    match '/signup',  to: 'users#new'
-    match '/signin',  to: 'sessions#new'
-    match '/signout', to: 'sessions#destroy', via: :delete
+    resources :portfolios, only: [:new, :show, :create, :addparticipant, :destroy] # do #, only: [:new, :show, :create, :addparticipant, :destroy]
+    resources :participants, only: [:new, :create, :destroy] #do
+    resources :passports
+    #     end
+   # end
 
     
-
-    match '/home',    to: 'static_pages#home'
-
-    match '/help',    to: 'static_pages#help'
-
-    match '/about',   to: 'static_pages#about'
-
-    match '/contacts', to: 'static_pages#contacts'
 
 
 

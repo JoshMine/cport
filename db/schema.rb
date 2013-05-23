@@ -62,6 +62,15 @@ ActiveRecord::Schema.define(:version => 20130521054806) do
     t.datetime "updated_at",            :null => false
   end
 
+  create_table "people", :force => true do |t|
+    t.integer  "portfolio_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+  end
+
   create_table "portfolios", :force => true do |t|
     t.boolean  "active"
     t.datetime "created_at", :null => false

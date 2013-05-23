@@ -7,32 +7,19 @@ class ParticipantsController < ApplicationController
   def index
     @participants = Participant.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @participants }
-    end
+   # redirect_to portfolio_path
   end
 
   # GET /participants/1
   # GET /participants/1.json
   def show
     @participant = Participant.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @participant }
-    end
   end
 
   # GET /participants/new
   # GET /participants/new.json
   def new
     @participant = Participant.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @participant }
-    end
   end
 
   # GET /participants/1/edit
@@ -40,45 +27,28 @@ class ParticipantsController < ApplicationController
     @participant = Participant.find(params[:id])
   end
 
-  # POST /participants
-  # POST /participants.json
+
   def create
     @participant = current_user.portfolio.participants.build(params[:participant])
-
-    respond_to do |format|
-      if @participant.save
-        format.html { redirect_to portfolio_path, notice: 'Participant was successfully created.' }
-        format.json { render json: @participant, status: :created, location: @participant }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
-      end
+    if @participant.save
+      redirect_to portfolio_path, notice: 'Participant was successfully created.'
+    else
+      render action: "new"
     end
   end
   
-  def addContactData
-    @po = current_user.portfolio
-    @participants = current_user.portfolio.participants
-    @participant = @participants.last
-    #p @participant
-    @contact_data = @participant.contact_data.new
-  end
-
   # PUT /participants/1
   # PUT /participants/1.json
   def update
     @participant = Participant.find(params[:id])
 
-    respond_to do |format|
-      if @participant.update_attributes(params[:participant])
-        format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
-      end
+    if @participant.update_attributes(params[:participant])
+      redirect_to @participant, notice: 'Participant was successfully updated.'
+    else
+      render action: "edit" 
     end
   end
+
 
   # DELETE /participants/1
   # DELETE /participants/1.json

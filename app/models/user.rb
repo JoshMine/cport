@@ -2,15 +2,18 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  name            :string(255)
-#  email           :string(255)
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  password_digest :string(255)
-#  remember_token  :string(255)
-#  admin           :boolean          default(FALSE)
-#  person_id       :integer
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  email               :string(255)
+#  created_at          :datetime         not null
+#  updated_at          :datetime         not null
+#  password_digest     :string(255)
+#  remember_token      :string(255)
+#  admin               :boolean          default(FALSE)
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -20,7 +23,7 @@ class User < ActiveRecord::Base
   has_one  :portfolio
   has_one  :person
   
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "http://placehold.it/100x100"
   
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token

@@ -1,6 +1,14 @@
 <h1>Editing participant</h1>
 
-<%= render 'form' %>
+<%= form_for(@participant) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
 
-<%= link_to 'Show', @participant %> |
-<%= link_to 'Back', participants_path %>
+  <%= render 'shared/person_form', f: f %>
+
+  <%= f.submit "Сохранить", class: "btn btn-large btn-primary" %>
+
+<% end %>
+
+<%= link_to 'Назад', @participant %> |
+

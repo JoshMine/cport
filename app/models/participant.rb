@@ -15,7 +15,13 @@ class Participant < ActiveRecord::Base
   validates :m_phone, presence: true
   
   
-   
+  def full_name
+    "#{last_name} #{first_name} #{middle_name}"
+  end
+  
+  def age
+    ((Date.today - date_birth) / 365).floor
+  end
   
   
 end

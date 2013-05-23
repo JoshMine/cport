@@ -2,14 +2,7 @@ class ParticipantsController < ApplicationController
   before_filter :signed_in_user
   
   
-  # GET /participants
-  # GET /participants.json
-  def index
-    @participants = Participant.all
-
-   # redirect_to portfolio_path
-  end
-
+  
   # GET /participants/1
   # GET /participants/1.json
   def show

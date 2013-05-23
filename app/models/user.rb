@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   has_secure_password
   
   has_one  :portfolio
-  has_one  :person
+  #has_one  :person
   
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "http://placehold.it/100x100"
   

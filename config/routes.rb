@@ -23,6 +23,9 @@ Cport::Application.routes.draw do
     match '/portfolio/addparticipant', to: 'portfolios#addparticipant'
      
     match '/participant/documents', to: 'participants#documents'
+    match '/participant/property', to: 'participants#property'
+    match '/participant/incoming', to: 'participants#incoming'
+    match '/participant/costs', to: 'participants#costs'
     
 
    

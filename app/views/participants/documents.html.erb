@@ -4,14 +4,13 @@
     </div>
 
 
-<% if @participant.passports %>
-  <%= render 'participants/documents/passports' %>
-<% else %>
-<h4>Паспорт гражданина РФ</h4>
+<% if @participant.passports.empty? %>
   <div class="span8">
     <h4>Паспорт гражданина РФ</h4>
     <%= link_to "Создать", new_passport_path, class: "btn btn-small btn-primary" %>
   </div>
+<% else %>
+  <%= render 'participants/documents/passports' %>
 <% end %>
 
 <div class="span8">
@@ -21,7 +20,7 @@
 <% if @participant.driver_license.empty? %>
   <div class="span8">
     <h4>Водительское удостоверение</h4>
-    <%= link_to "Создать", new_passport_path, class: "btn btn-small btn-primary" %>
+    <%= link_to "Создать", "#", class: "btn btn-small btn-primary" %>
   </div>
 <% else %>
   <%= render 'participants/documents/passports' %>
@@ -42,11 +41,7 @@
 
 <hr>
 
-<h4>Паспорт</h4> 
-
-<hr>
-
-<h4>Паспорт</h4> 
+<h4>Заграничный паспорт</h4> 
 
 </div>
 

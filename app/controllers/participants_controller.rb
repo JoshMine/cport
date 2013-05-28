@@ -57,4 +57,16 @@ class ParticipantsController < ApplicationController
   def documents
     @participant = current_user.portfolio.participant
   end
+  
+  def property
+    @participant = current_user.portfolio.participant
+  end
+  
+  def incoming
+    @participant = current_user.portfolio.participant
+  end
+  
+  def costs
+    @participant = current_user.portfolio.participant
+  end
 end

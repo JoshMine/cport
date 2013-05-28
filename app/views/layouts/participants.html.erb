@@ -19,9 +19,9 @@
           <ul class="nav nav-tabs nav-stacked">
             <li><%= link_to "Основные данные", participant_path(@participant) %></li>
             <li><%= link_to "Документы", participant_documents_path %></li>
-            <li><a href="#">Имущество</a></li>
-            <li><a href="#">Доходы</a></li>
-            <li><a href="#">Расходы</a></li>
+            <li><%= link_to "Имущество", participant_property_path %></li>
+            <li><%= link_to "Доходы", participant_incoming_path %></li>
+            <li><%= link_to "Расходы", participant_costs_path %></li>
             <li><a href="#">Активы</a></li>
             <li><a href="#">Пассивы</a></li>
           </ul>

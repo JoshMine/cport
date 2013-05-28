@@ -1,0 +1,44 @@
+  <script>
+    $(function() {
+      $( "#passport_issue_date" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+      });
+    });
+  </script>
+
+      <%= f.label :series , "Серия"%>
+      <%= f.text_field :series%>
+
+      <%= f.label :number , "Номер"%>
+      <%= f.text_field :number %>
+
+      <%= f.label :issuer , "Кем выдан"%>
+      <%= f.text_field :issuer %>
+
+      <%= f.label :issue_date , "Дата выдачи"%>
+      <%= f.text_field :issue_date %>
+
+      <%= f.label :dep_code , "Код подразделения"%>
+      <%= f.text_field :dep_code %>
+
+      <%= f.label :last_name , "Фамилия"%>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :first_name , "Имя"%>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :middle_name , "Отчество"%>
+      <%= f.text_field :middle_name %>
+
+      <%= f.label :birth_place, "Место рождения" %>
+      <%= f.telephone_field :birth_place %>
+  
+      <%= f.label(:marrital_status, "Семейное положение") %>
+      <%= f.select(:marrital_status, [['-----', 'null'], ['В браке не состою', 'single'], ['В браке', 'married'], ['В разводе', 'unmarried'], ['Вдова/вдовец', 'widower']]) %>
+
+      <%= f.label :official_address, "Адрес регистрации" %>
+      <%= f.text_field :official_address %>
+      
+      <%= f.label :doc_file, "Копия паспорта" %>
+      <%= f.file_field :doc_file %>

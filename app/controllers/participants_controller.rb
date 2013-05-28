@@ -6,7 +6,7 @@ class ParticipantsController < ApplicationController
   # GET /participants/1
   # GET /participants/1.json
   def show
-    @participant = Participant.find(params[:id])
+    @participant = current_user.portfolio.participant
   end
 
   # GET /participants/new
@@ -17,7 +17,7 @@ class ParticipantsController < ApplicationController
 
   # GET /participants/1/edit
   def edit
-    @participant = Participant.find(params[:id])
+    @participant = current_user.portfolio.participant.find(params[:id])
   end
 
 
@@ -34,7 +34,6 @@ class ParticipantsController < ApplicationController
   # PUT /participants/1.json
   def update
     @participant = Participant.find(params[:id])
-
     if @participant.update_attributes(params[:participant])
       redirect_to @participant, notice: 'Participant was successfully updated.'
     else
@@ -56,6 +55,6 @@ class ParticipantsController < ApplicationController
   end
   
   def documents
-    @participant = Participant.find(params[:id])
+    @participant = current_user.portfolio.participant
   end
 end

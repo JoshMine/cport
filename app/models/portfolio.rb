@@ -19,4 +19,8 @@ class Portfolio < ActiveRecord::Base
   belongs_to :user
   has_many :participants
   
+  def participant
+    self.participants.first
+  end
+  
 end

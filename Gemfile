@@ -10,6 +10,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 #gem "mysql2"
 gem "paperclip", "~> 3.0"
 gem 'russian', '~> 0.6.0'
+gem "select2-rails"
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

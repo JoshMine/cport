@@ -21,7 +21,7 @@
 class Participant < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :middle_name, :date_birth, :gender, :f_address, :h_phone, :m_phone
   
-  has_one :contact_data
+  #has_one :contact_data
   has_many :passports
   belongs_to :portfolio
   
@@ -41,6 +41,12 @@ class Participant < ActiveRecord::Base
   
   def age
     ((Date.today - date_birth) / 365).floor
+  end
+  
+  # ВРЕМЕННАЯ ЗАГЛУШКА!!!
+  
+  def driver_license
+    ""
   end
   
   

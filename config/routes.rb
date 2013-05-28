@@ -22,16 +22,16 @@ Cport::Application.routes.draw do
     match '/portfolio/create',  to: 'portfolios#new'
     match '/portfolio/addparticipant', to: 'portfolios#addparticipant'
      
-   # match '/participant',         to: 'participants#show'
+    match '/participant/documents', to: 'participants#documents'
     
 
    
     resources :users
     resources :sessions, only: [:new, :create, :destroy]
-    resources :portfolios, only: [:new, :show, :create, :addparticipant, :destroy] # do #, only: [:new, :show, :create, :addparticipant, :destroy]
-    resources :participants, only: [:new, :create, :show, :edit, :update, :destroy] #do
+    resources :portfolios, only: [:new, :show, :create, :addparticipant] # do #, only: [:new, :show, :create, :addparticipant, :destroy]
+    resources :participants #, only: [:new, :create, :show, :edit, :update, :destroy, :documents]# do
     resources :passports
-    #     end
+   # end
    # end
 
     

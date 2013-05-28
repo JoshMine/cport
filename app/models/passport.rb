@@ -26,11 +26,28 @@
 #
 
 class Passport < ActiveRecord::Base
-  attr_accessible [:birth_date, :birth_place, :dep_code, :first_name, 
-    :gender, :issue_date, :issuer, :last_name, :middle_name, :number, :series, 
-    :marrital_status, :official_address, :doc_file]
+  attr_accessible :birth_date, :birth_place, :dep_code, :first_name, :gender, :issue_date, :issuer, :last_name, :middle_name, :number, :series, :marrital_status, :official_address, :doc_file
   
   belongs_to :participant
   
+  validates :series, presence: true
+  validates :number, presence: true
+  validates :issuer, presence: true
+  validates :issue_date, presence: true
+  validates :dep_code, presence: true
   
+  validates :first_name, presence: true, length: { minimum: 2 }
+  validates :last_name, presence: true, length: { minimum: 1 }
+  
+  validates :dep_code, presence: true
+  validates :official_address, presence: true
+  validates :birth_place, presence: true
+  
+  validates :marrital_status, inclusion: {in: %w(single married unmarried widower)}, allow_blank: false
+  
+  has_attached_file :doc_file, :styles => { :medium => "300x600>", :thumb => "100x200>" }, :default_url => "http://placehold.it/100x200"
+  
+  def full_number
+    "#{series} #{number}"
+  end
 end

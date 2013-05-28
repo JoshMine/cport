@@ -1,6 +1,9 @@
   <script>
     $(function() {
-      $( "#participant_date_birth" ).datepicker();
+      $( "#participant_date_birth" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+      });
     });
   </script>
 
@@ -14,7 +17,7 @@
       <%= f.text_field :middle_name %>
 
       <%= f.label(:gender, "Пол") %>
-      <%= f.select(:gender, [['', 'null'], ['Мужской', 'male'], ['Женский', 'female']]) %>
+      <%= f.select(:gender, [['-----', 'null'], ['Мужской', 'male'], ['Женский', 'female']]) %>
       
       <%= f.label :date_birth, "Дата рождения" %>
       <%= f.text_field :date_birth %>

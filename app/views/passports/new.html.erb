@@ -1,2 +1,13 @@
 <h1></h1>
 <p>Find me in app/views/participant_passports/new.html.erb</p>
+
+
+<%= form_for(@passport) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'passport_form', f: f %>
+
+  <%= f.submit "Создать", class: "btn btn-large btn-primary" %>
+
+<% end %>

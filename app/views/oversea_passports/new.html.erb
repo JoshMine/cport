@@ -1,11 +1,11 @@
-<h4>Паспорт гражданина РФ</h4>
+<h4>Заграничный паспорт</h4>
 
 
-<%= form_for(@passport) do |f| %>
+<%= form_for(@oversea_passport) do |f| %>
     
   <%= render 'shared/error_messages', object: f.object %>
 
-  <%= render 'passport_form', f: f %>
+  <%= render 'oversea_passport_form', f: f %>
 
   <%= f.submit "Создать", class: "btn btn-large btn-primary" %>
 

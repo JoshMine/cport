@@ -1,0 +1,12 @@
+<h4>Cвидетельсво ИНН</h4>
+
+
+<%= form_for(@tin_certificate) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'tin_certificate_form', f: f %>
+
+  <%= f.submit "Изменить", class: "btn btn-large btn-primary" %>
+
+<% end %>

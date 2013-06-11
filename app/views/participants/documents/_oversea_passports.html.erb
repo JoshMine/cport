@@ -1,0 +1,13 @@
+<h4>Заграничный паспорт</h4>
+
+<% @participant.oversea_passports.each do |oversea_passport| %>
+  
+<div class="span8">
+  <%= link_to oversea_passport.full_number, edit_oversea_passport_path(oversea_passport) %>, выдан: <%= oversea_passport.issuer %>, <%= oversea_passport.issue_date %> <span class="label label-success pull-right">Действителен</span>
+  <hr>
+</div>
+
+<% end %>
+
+
+

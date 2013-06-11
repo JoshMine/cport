@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521054806) do
+ActiveRecord::Schema.define(:version => 20130604202633) do
 
   create_table "contact_data", :force => true do |t|
     t.string   "email"
@@ -21,6 +21,48 @@ ActiveRecord::Schema.define(:version => 20130521054806) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "participant_id"
+  end
+
+  create_table "drive_licenses", :force => true do |t|
+    t.integer  "participant_id"
+    t.string   "series"
+    t.integer  "number"
+    t.string   "issuer"
+    t.date     "issue_date"
+    t.date     "exp_date"
+    t.integer  "status",                :default => 0
+    t.string   "doc_file_file_name"
+    t.string   "doc_file_content_type"
+    t.integer  "doc_file_file_size"
+    t.datetime "doc_file_updated_at"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+  end
+
+  create_table "oms_certificates", :force => true do |t|
+    t.string   "number"
+    t.integer  "status",         :default => 0
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "participant_id"
+  end
+
+  create_table "oversea_passports", :force => true do |t|
+    t.integer  "participant_id"
+    t.integer  "series"
+    t.integer  "number"
+    t.string   "issuer"
+    t.date     "issue_date"
+    t.date     "exp_date"
+    t.string   "last_name"
+    t.string   "first_name"
+    t.integer  "status"
+    t.string   "doc_file_file_name"
+    t.string   "doc_file_content_type"
+    t.integer  "doc_file_file_size"
+    t.datetime "doc_file_updated_at"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "participants", :force => true do |t|
@@ -62,6 +104,18 @@ ActiveRecord::Schema.define(:version => 20130521054806) do
     t.datetime "updated_at",            :null => false
   end
 
+  create_table "pension_certificates", :force => true do |t|
+    t.string   "snils"
+    t.integer  "status",                :default => 0
+    t.string   "doc_file_file_name"
+    t.string   "doc_file_content_type"
+    t.integer  "doc_file_file_size"
+    t.datetime "doc_file_updated_at"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.integer  "participant_id"
+  end
+
   create_table "people", :force => true do |t|
     t.integer  "portfolio_id"
     t.datetime "created_at",   :null => false
@@ -77,6 +131,18 @@ ActiveRecord::Schema.define(:version => 20130521054806) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.boolean  "confirm"
+  end
+
+  create_table "tin_certificates", :force => true do |t|
+    t.string   "tin"
+    t.integer  "status",                :default => 0
+    t.string   "doc_file_file_name"
+    t.string   "doc_file_content_type"
+    t.integer  "doc_file_file_size"
+    t.datetime "doc_file_updated_at"
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.integer  "participant_id"
   end
 
   create_table "users", :force => true do |t|

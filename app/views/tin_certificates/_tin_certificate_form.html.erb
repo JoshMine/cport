@@ -1,0 +1,12 @@
+
+      <%= f.label :tin , "ИНН"%>
+      <%= f.text_field :tin%>
+
+      <%= f.label :doc_file, "Копия документа" %>
+      
+      <%if !@tin_certificate.doc_file_file_name %>
+        <%= f.file_field :doc_file %>
+      <% else %>  
+        <%= image_tag @tin_certificate.doc_file.url(:thumb), :class => "img-rounded" %>
+      <%end%>
+      <br/>

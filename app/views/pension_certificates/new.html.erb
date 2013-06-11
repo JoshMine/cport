@@ -1,0 +1,12 @@
+<h4> Пенсионное свидетельство</h4>
+
+
+<%= form_for(@pension_certificate) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'pension_certificate_form', f: f %>
+
+  <%= f.submit "Создать", class: "btn btn-large btn-primary" %>
+
+<% end %>

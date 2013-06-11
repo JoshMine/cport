@@ -1,0 +1,13 @@
+<h4>Водительское удостоверение</h4>
+
+<% @participant.drive_licenses.each do |d_l| %>
+  
+<div class="span8">
+  <%= link_to d_l.full_number, edit_drive_license_path(d_l) %>, выдано: <%= d_l.issuer %>, <%= d_l.issue_date %> <span class="label label-success pull-right">Действительно</span>
+  <hr>
+</div>
+
+<% end %>
+
+
+

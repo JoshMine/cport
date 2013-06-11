@@ -8,6 +8,7 @@
   <div class="span8">
     <h4>Паспорт гражданина РФ</h4>
     <%= link_to "Создать", new_passport_path, class: "btn btn-small btn-primary" %>
+    <hr>
   </div>
 <% else %>
   <%= render 'participants/documents/passports' %>
@@ -17,32 +18,51 @@
   
 </div>
 
-<% if @participant.driver_license.empty? %>
+<% if @participant.drive_licenses.empty? %>
   <div class="span8">
     <h4>Водительское удостоверение</h4>
-    <%= link_to "Создать", "#", class: "btn btn-small btn-primary" %>
+    <%= link_to "Создать", new_drive_license_path, class: "btn btn-small btn-primary" %>
+    <hr>
   </div>
 <% else %>
-  <%= render 'participants/documents/passports' %>
+  <%= render 'participants/documents/drive_licenses' %>
 <% end %>
 
-
+  
 <div class="span8">
-
-<h4>Свидетельство ПФ РФ</h4> 
-
-<hr>
-
-<h4>Свидетельство ИНН</h4> 
-
-<hr>
-
-<h4>Страховой полис ОМС</h4> 
-
-<hr>
-
-<h4>Заграничный паспорт</h4> 
-
+  
 </div>
+
+<% if !@participant.pension_certificate %>
+  <div class="span8">
+    <h4>Пенсионное свидетельство</h4>
+    <%= link_to "Создать", new_pension_certificate_path, class: "btn btn-small btn-primary" %>
+    <hr>
+  </div>
+<% else %>
+  <%= render 'participants/documents/pension_certificate' %>
+<% end %>
+  
+
+<% if !@participant.tin_certificate %>
+  <div class="span8">
+    <h4>Cвидетельство ИНН</h4>
+    <%= link_to "Создать", new_tin_certificate_path, class: "btn btn-small btn-primary center" %>
+    <hr>
+  </div>
+<% else %>
+  <%= render 'participants/documents/tin_certificate' %>
+<% end %>
+  
+
+<% if @participant.oversea_passports.empty? %>
+  <div class="span8">
+    <h4>Заграничный паспорт</h4>
+    <%= link_to "Создать", new_oversea_passport_path, class: "btn btn-small btn-primary" %>
+    <hr>
+  </div>
+<% else %>
+  <%= render 'participants/documents/oversea_passports' %>
+<% end %>
 
 </div>

@@ -1,0 +1,12 @@
+<h1>DriveLicenses#edit</h1>
+<p>Find me in app/views/drive_licenses/edit.html.erb</p>
+
+<%= form_for(@drive_license) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'drive_license_form', f: f %>
+
+  <%= f.submit "Сохранить", class: "btn btn-large btn-primary" %>
+
+<% end %>

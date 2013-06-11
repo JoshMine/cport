@@ -23,6 +23,12 @@ class Participant < ActiveRecord::Base
   
   #has_one :contact_data
   has_many :passports
+  has_many :drive_licenses
+  has_one  :pension_certificate
+  has_one  :tin_certificate
+  has_one  :oms_certificate
+  has_many :oversea_passports
+  
   belongs_to :portfolio
   
   validates :first_name, presence: true, length: { minimum: 2 }

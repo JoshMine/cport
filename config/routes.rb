@@ -34,6 +34,10 @@ Cport::Application.routes.draw do
     resources :portfolios, only: [:new, :show, :create, :addparticipant] # do #, only: [:new, :show, :create, :addparticipant, :destroy]
     resources :participants #, only: [:new, :create, :show, :edit, :update, :destroy, :documents]# do
     resources :passports
+    resources :drive_licenses
+    resources :pension_certificates
+    resources :tin_certificates
+    resources :oversea_passports
    # end
    # end
 

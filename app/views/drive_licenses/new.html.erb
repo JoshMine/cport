@@ -1,11 +1,11 @@
-<h4>Паспорт гражданина РФ</h4>
+<h4>Водительское удостоверение</h4>
 
 
-<%= form_for(@passport) do |f| %>
+<%= form_for(@drive_license) do |f| %>
     
   <%= render 'shared/error_messages', object: f.object %>
 
-  <%= render 'passport_form', f: f %>
+  <%= render 'drive_license_form', f: f %>
 
   <%= f.submit "Создать", class: "btn btn-large btn-primary" %>
 

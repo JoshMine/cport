@@ -1,0 +1,12 @@
+<h4>Квартира</h4>
+
+
+<%= form_for(@flat) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'flat_form', f: f %>
+
+  <%= f.submit "Создать", class: "btn btn-large btn-primary" %>
+
+<% end %>

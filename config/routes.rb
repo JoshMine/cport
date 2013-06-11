@@ -1,5 +1,6 @@
 Cport::Application.routes.draw do
 
+
   scope "(:locale)", :locale => /ru|en/ do
     
     match '/:locale' => 'static_pages#home'
@@ -38,6 +39,7 @@ Cport::Application.routes.draw do
     resources :pension_certificates
     resources :tin_certificates
     resources :oversea_passports
+    resources :flats
    # end
    # end
 

@@ -1,0 +1,15 @@
+<h4>Недвижимость</h4>
+
+<% @participant.flats.each do |flat| %>
+
+<h4>Квартира</h4>
+  
+<div class="span8">
+  <%= link_to flat.address, edit_flat_path(flat) %>, кол-во комнат: <%= flat.rooms_quantity %>, Общая площадь: <%= flat.total_square %> кв.м. 
+  <hr>
+</div>
+
+<% end %>
+
+
+

@@ -2,13 +2,18 @@
   <div class="span8">
       <h3>Имущество</h3>
   </div>
-
-
+  
+  <% if @participant.flats.empty? %>
+    <div class="span8">
+      <h4>Квартира</h4>
+      <%= link_to "Добавить", new_flat_path, class: "btn btn-small btn-primary" %>
+      <hr>
+    </div>
+  <% else %>
+    <%= render 'participants/propertys/flats' %>
+  <% end %>
+  
   <div class="span8">
-
-    <h4>Недвижимость</h4> 
-
-    <hr>
 
     <h4>Транспортные средства</h4> 
 

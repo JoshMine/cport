@@ -18,7 +18,7 @@ class PassportsController < ApplicationController
     #@passport.participant = current_user.portfolio.participant
     if @passport.save
       flash[:success] = "Passport created!!!"
-      redirect_to participant_path(@participant)
+      redirect_to participant_documents_path
     else
       render 'new'
     end

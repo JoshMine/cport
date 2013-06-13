@@ -29,6 +29,7 @@ class Participant < ActiveRecord::Base
   has_one  :oms_certificate
   has_many :oversea_passports
   has_many :flats
+  has_many :cars
   
   belongs_to :portfolio
   

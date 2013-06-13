@@ -13,14 +13,16 @@
     <%= render 'participants/propertys/flats' %>
   <% end %>
   
-  <div class="span8">
-
-    <h4>Транспортные средства</h4> 
-
-    <hr>
-
-    <h4>Иное</h4> 
-
-  </div>
+  <% if @participant.cars.empty? %>
+    <div class="span8">
+      <h4>Автомобиль</h4>
+      <%= link_to "Добавить", new_car_path, class: "btn btn-small btn-primary" %>
+      <hr>
+    </div>
+  <% else %>
+    <%= render 'participants/propertys/cars' %>
+  <% end %>
+  
+  
 
 </div>

@@ -40,6 +40,7 @@ Cport::Application.routes.draw do
     resources :tin_certificates
     resources :oversea_passports
     resources :flats
+    resources :cars
    # end
    # end
 

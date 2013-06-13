@@ -1,0 +1,16 @@
+<h4>Транспорт</h4>
+
+<% @participant.cars.each do |car| %>
+
+<h4>Автомобиль</h4>
+  
+<div class="span8">
+  <%= link_to car.brand, edit_car_path(car) %> <%= car.model %> <span class="label label-info pull-right"><%= car.price %> руб.</span>
+  <br /> год выпуска: <%= car.prod_year %>  
+  <hr>
+</div>
+
+<% end %>
+
+
+

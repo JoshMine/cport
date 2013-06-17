@@ -1,0 +1,15 @@
+
+<% @participant.main_jobs.each do |main_job| %>
+
+<h4>Основное место работы</h4>
+  
+<div class="span8">
+  <%= link_to main_job.company, edit_main_job_path(main_job) %> <span class="label label-info pull-right"><%= main_job.monthly_income %> руб.</span>
+  <br /> Должность: <%= main_job.position %>, Дата начала работы: <%= main_job.start_date %>  
+  <hr>
+</div>
+
+<% end %>
+
+
+

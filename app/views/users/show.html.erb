@@ -7,10 +7,10 @@
 
 <% if !@user.portfolio %>
 
-  <%= link_to "Создать портфолио", portfolio_create_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "Создать портфолио", portfolio_create_path, class: "btn btn-large btn-success" %>
 
 <% else %>
 
-  <%= link_to "Портфолио", portfolio_path, class: "btn btn-large btn-primary" %>
+  <%= link_to "Портфолио", portfolio_path, class: "btn btn-large btn-success" %>
 
 <% end %>

@@ -41,6 +41,7 @@ Cport::Application.routes.draw do
     resources :oversea_passports
     resources :flats
     resources :cars
+    resources :main_jobs
    # end
    # end
 

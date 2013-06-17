@@ -3,12 +3,17 @@
       <h3>Доходы</h3>
   </div>
 
-
+   <% if @participant.main_jobs.empty? %>
+    <div class="span8">
+      <h4>Основное место работы</h4>
+      <%= link_to "Добавить", new_main_job_path, class: "btn btn-small btn-success" %>
+      <hr>
+    </div>
+  <% else %>
+    <%= render 'participants/incomings/main_jobs' %>
+  <% end %>
+  
   <div class="span8">
-
-    <h4>Основное место работы</h4> 
-
-    <hr>
 
     <h4>Работа по совместительству</h4> 
 

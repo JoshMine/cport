@@ -30,6 +30,7 @@ class Participant < ActiveRecord::Base
   has_many :oversea_passports
   has_many :flats
   has_many :cars
+  has_many :main_jobs
   
   belongs_to :portfolio
   

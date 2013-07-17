@@ -1,6 +1,6 @@
 #!/home/devfinco/.rvm/rubies/ruby-1.9.3-p448/bin/ruby
 
-ENV['RAILS_ENV'] ||= 'production'
+ENV['RAILS_ENV'] ||= 'development'
 ENV['HOME'] ||= `echo ~`.strip
 ENV['GEM_HOME'] = File.expand_path('~/.rvm/gems/ruby-1.9.3-p448')
 ENV['GEM_PATH'] = File.expand_path('~/.rvm/gems/ruby-1.9.3-p448') + ":" +

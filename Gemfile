@@ -13,7 +13,7 @@ gem 'russian', '~> 0.6.0'
 gem "select2-rails"
 
 group :development, :test do
-  gem 'sqlite3', '1.3.4'
+  gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
   gem 'annotate', '2.5.0'
   gem 'factory_girl_rails', '4.1.0'

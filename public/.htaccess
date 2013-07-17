@@ -19,7 +19,7 @@ AddHandler fastcgi-script .fcgi
 #
 # Example:
 #   RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
-RewriteEngine On
+#RewriteEngine On
 
 # If your Rails application is accessed via an Alias directive,
 # then you MUST also set the RewriteBase in this htaccess file.
@@ -28,10 +28,10 @@ RewriteEngine On
 #   Alias /myrailsapp /path/to/myrailsapp/public
 #   RewriteBase /myrailsapp
 
-RewriteRule ^$ index.html [QSA]
-RewriteRule ^([^.]+)$ $1.html [QSA]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
+#RewriteRule ^$ index.html [QSA]
+#RewriteRule ^([^.]+)$ $1.html [QSA]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
 
 # In case Rails experiences terminal errors
 # Instead of displaying this message you can supply a file here which will be rendered instead
@@ -39,4 +39,23 @@ RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
 # Example:
 #   ErrorDocument 500 /500.html
 
-ErrorDocument 500 "<h2>Application error</h2>Rails application failed to start properly" 
+#ErrorDocument 500 "<h2>Application error</h2>Rails application failed to start properly" 
+
+
+
+
+<IfModule mod_fastcgi.c>
+AddHandler fastcgi-script .fcgi
+</IfModule>
+<IfModule mod_fcgid.c>
+AddHandler fcgid-script .fcgi
+</IfModule>
+
+Options +FollowSymLinks +ExecCGI 
+
+RewriteEngine On 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ dispatch.fcgi/$1 [QSA,L] 
+ 
+ErrorDocument 500 "Rails application failed to start properly"

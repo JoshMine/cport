@@ -1,4 +1,4 @@
-#!/home/username/.rvm/rubies/ruby-1.9.3-p448/bin/ruby
+#!/home/devfinco/.rvm/rubies/ruby-1.9.3-p448/bin/ruby
 
 ENV['RAILS_ENV'] ||= 'production'
 ENV['HOME'] ||= `echo ~`.strip

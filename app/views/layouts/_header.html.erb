@@ -1,39 +1,19 @@
-<<<<<<< HEAD
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "кредитный портфолио", root_path, id: "logo" %>
-=======
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
       <%= link_to I18n.t('.project'), root_path, id: "logo" %>
->>>>>>> cport/Portfolio
       <nav>
         <ul class="nav pull-right">
           <li><%= link_to "Главная", root_path %></li>
           <li><%= link_to "Помощь",  help_path %></li>
           <% if signed_in? %>
-<<<<<<< HEAD
-            <li><%= link_to "Пользователи", users_path %></li>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <%= @current_user.name %> <b class="caret"></b>
-=======
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                <i class="icon-user"></i> <%= @current_user.name %> <b class="caret"></b>
->>>>>>> cport/Portfolio
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Профиль", current_user %></li>
                 <li><%= link_to "Настройки", edit_user_path(current_user) %></li>
-<<<<<<< HEAD
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Выйти", signout_path, method: "delete" %>
-                </li>
-=======
                 <% if !current_user.portfolio %>
                   <li class="divider"></li>
                   <li>
@@ -49,7 +29,6 @@
                     <%= link_to "Выйти", signout_path, method: "delete" %>
                   </li>
                 <% end %>
->>>>>>> cport/Portfolio
               </ul>
             </li>
           <% else %>
@@ -59,8 +38,4 @@
       </nav>
     </div>
   </div>
-<<<<<<< HEAD
 </header>
-=======
-</header>
->>>>>>> cport/Portfolio

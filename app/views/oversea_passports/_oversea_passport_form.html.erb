@@ -1,0 +1,42 @@
+  <script>
+    $(function() {
+      $( "#oversea_passport_issue_date" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+      });
+    });
+  </script>
+  
+  <script>
+    $(function() {
+      $( "#oversea_passport_exp_date" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+      });
+    });
+  </script>
+
+      <%= f.label :series , "Серия"%>
+      <%= f.text_field :series%>
+
+      <%= f.label :number , "Номер"%>
+      <%= f.text_field :number %>
+
+      <%= f.label :issuer , "Кем выдан"%>
+      <%= f.text_field :issuer %>
+
+      <%= f.label :issue_date , "Дата выдачи"%>
+      <%= f.text_field :issue_date %>
+
+      <%= f.label :exp_date , "Действителен до"%>
+      <%= f.text_field :exp_date %>
+
+      <%= f.label :last_name , "Фамилия латиницей"%>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :first_name , "Имя латиницей"%>
+      <%= f.text_field :first_name %>
+     
+      <%= f.label :doc_file, "Копия паспорта" %>
+      <%= f.file_field :doc_file %>
+      <br />

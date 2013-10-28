@@ -1,0 +1,12 @@
+<h4>Заграничный паспорт</h4>
+
+<%= form_for(@oversea_passport) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'oversea_passport_form', f: f %>
+
+  <%= f.submit "Сохранить", class: "btn btn-large btn-success" %>
+
+<% end %>
+

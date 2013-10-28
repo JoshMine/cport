@@ -1,0 +1,39 @@
+  <script>
+    $(function() {
+      $( "#drive_license_issue_date" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+      });
+    });
+    
+    $(function() {
+      $( "#drive_license_exp_date" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+      });
+    });
+  </script>
+
+      <%= f.label :series , "Серия"%>
+      <%= f.text_field :series%>
+
+      <%= f.label :number , "Номер"%>
+      <%= f.text_field :number %>
+
+      <%= f.label :issuer , "Кем выдано"%>
+      <%= f.text_field :issuer %>
+
+      <%= f.label :issue_date , "Дата выдачи"%>
+      <%= f.text_field :issue_date %>
+
+      <%= f.label :exp_date , "Действительно до"%>
+      <%= f.text_field :exp_date %>
+      
+      <%= f.label :doc_file, "Копия документа" %>
+      
+      <%if @drive_license.doc_file_file_name %>
+        <%= image_tag @drive_license.doc_file.url(:thumb), :class => "img-rounded" %>
+      <% else %>  
+        <%= f.file_field :doc_file %>
+      <%end%>
+      <br/>

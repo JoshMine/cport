@@ -1,0 +1,22 @@
+  
+      <%= f.label :brand , "Марка"%>
+      <%= f.text_field :brand%>
+
+      <%= f.label :model , "Модель"%>
+      <%= f.text_field :model %>
+
+      <%= f.label :prod_year , "Год выпуска"%>
+      <%= f.text_field :prod_year %>
+
+      <%= f.label :price , "Примерная стоимость"%>
+      <%= f.text_field :price %>
+
+      <%= f.label :photo, "Копия документа" %>
+      
+      <%if !@car.photo_file_name %>
+        <%= f.file_field :photo %>
+      <% else %>  
+        <%= image_tag @car.photo.url(:thumb), :class => "img-rounded" %>
+      <%end%>
+      <br/>
+

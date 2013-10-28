@@ -1,0 +1,12 @@
+<h4>Паспорт гражданина РФ</h4>
+
+
+<%= form_for(@passport) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'passport_form', f: f %>
+
+  <%= f.submit "Сохранить", class: "btn btn-large btn-success" %>
+
+<% end %>

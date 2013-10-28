@@ -1,0 +1,13 @@
+
+<%= form_for(@participant) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'shared/person_form', f: f %>
+
+  <%= f.submit "Сохранить", class: "btn btn-large btn-success" %>
+
+<% end %>
+
+<%= link_to 'Назад', @participant %> |
+

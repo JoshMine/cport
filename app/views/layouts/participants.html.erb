@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= I18n.t('.project') %></title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    
+    <div class="container">
+      <div class="row">
+  
+        <h1> Участник </h1>
+  
+        <div class="span2"> 
+          <ul class="nav nav-tabs nav-stacked">
+            <li><%= link_to "Основные данные", participant_path(@participant) %></li>
+            <li><%= link_to "Документы", participant_documents_path %></li>
+            <li><%= link_to "Имущество", participant_property_path %></li>
+            <li><%= link_to "Доходы", participant_incoming_path %></li>
+            <li><%= link_to "Расходы", participant_costs_path %></li>
+            <li><a href="#">Активы</a></li>
+            <li><a href="#">Пассивы</a></li>
+          </ul>
+
+          <ul class="nav nav-tabs nav-stacked">
+            <li><a href="#">Портебности</a></li>
+          </ul>
+        </div>
+
+        <div class="span8">
+          
+          <h2><%= @participant.full_name %></h2>
+
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
+
+          <%= yield %>
+
+
+        </div>
+
+        <div class="span2"> 
+          <div class="well">
+
+             <h4 class="center">РЕЙТИНГ</h4>
+              <p class="rating center">56</p>
+ 
+
+          <hr>
+
+              <h4 class="center">ИНДЕКС</h4>
+              <p class="index center">25</p>
+
+          </div>
+
+        </div>
+
+      </div>
+      
+      
+        
+      
+        
+      <%= render 'layouts/footer' %>
+        
+      <%= debug(params) if Rails.env.development? %>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+
+<h1>Портфолио</h1>
+
+<h2>Создание портфолио</h2>
+
+<p>Создавая Кредитное Портфолио, Вы соглашаетесь с условиями использования 
+  Сервиса и даете согласие на автоматизированную обработку Ваших персональных данных.</p>
+
+<%= form_for(@portfolio) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.label(:confirm, "Подтверждаю") %>  
+  <%= f.check_box(:confirm) %>
+
+  <%= f.submit "Далее", class: "btn btn-large btn-success" %>
+<% end %>

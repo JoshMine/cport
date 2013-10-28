@@ -1,0 +1,26 @@
+  <script>
+    $(function() {
+      $( "#main_job_start_date" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+      });
+    });
+  </script> 
+
+
+      <%= f.label :company , "Организация"%>
+      <%= f.text_field :company %>
+
+      <%= f.label :position , "Должность"%>
+      <%= f.text_field :position %>
+
+      <%= f.label :start_date , "Дата начала работы"%>
+      <%= f.text_field :start_date %>
+
+      <%= f.label :description , "Функциональные обязанности"%>
+      <%= f.text_field :description %>
+
+      <%= f.label :monthly_income , "Ежемесячный доход"%>
+      <%= f.text_field :monthly_income %>
+
+

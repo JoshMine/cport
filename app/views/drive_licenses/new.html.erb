@@ -1,0 +1,12 @@
+<h4>Водительское удостоверение</h4>
+
+
+<%= form_for(@drive_license) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'drive_license_form', f: f %>
+
+  <%= f.submit "Создать", class: "btn btn-large btn-success" %>
+
+<% end %>

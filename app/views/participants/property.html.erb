@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="span8">
+      <h3>Имущество</h3>
+  </div>
+  
+  <% if @participant.flats.empty? %>
+    <div class="span8">
+      <h4>Квартира</h4>
+      <%= link_to "Добавить", new_flat_path, class: "btn btn-small btn-success" %>
+      <hr>
+    </div>
+  <% else %>
+    <%= render 'participants/propertys/flats' %>
+  <% end %>
+  
+  <% if @participant.cars.empty? %>
+    <div class="span8">
+      <h4>Автомобиль</h4>
+      <%= link_to "Добавить", new_car_path, class: "btn btn-small btn-success" %>
+      <hr>
+    </div>
+  <% else %>
+    <%= render 'participants/propertys/cars' %>
+  <% end %>
+  
+  
+
+</div>

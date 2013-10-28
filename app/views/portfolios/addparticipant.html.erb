@@ -1,0 +1,12 @@
+<h1>Личные данные</h1>
+<p></p>
+
+<%= form_for(@participant) do |f| %>
+    
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= render 'shared/person_form', f: f %>
+
+  <%= f.submit "Далее", class: "btn btn-large btn-success" %>
+
+<% end %>

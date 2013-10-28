@@ -17,7 +17,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+<<<<<<< HEAD
       flash[:success] = "Welcome #{@user.name}!!!"
+=======
+      flash[:success] = "Hello #{@user.name}. Please Signin!!!"
+>>>>>>> cport/Portfolio
       redirect_to signin_path
     else
       render 'new'
@@ -46,7 +50,10 @@ class UsersController < ApplicationController
   end
   
   private
+<<<<<<< HEAD
 
+=======
+>>>>>>> cport/Portfolio
     def signed_in_user
       unless signed_in?
         store_location

@@ -1,0 +1,36 @@
+  <script>
+    $(function() {
+      $( "#participant_date_birth" ).datepicker({
+        changeMonth: true,
+        changeYear: true
+      });
+    });
+  </script>
+
+      <%= f.label :last_name , "Фамилия"%>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :first_name , "Имя"%>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :middle_name , "Отчество"%>
+      <%= f.text_field :middle_name %>
+
+      <%= f.label(:gender, "Пол") %>
+      <%= f.select(:gender, [['-----', 'null'], ['Мужской', 'male'], ['Женский', 'female']]) %>
+      
+      <%= f.label :date_birth, "Дата рождения" %>
+      <%= f.text_field :date_birth %>
+  
+      <%= f.label :m_phone, "Мобильный телефон" %>
+      <%= f.telephone_field :m_phone %>
+
+      <%= f.label :h_phone, "Домашний телефон" %>
+      <%= f.telephone_field :h_phone %>
+
+      <%= f.label :f_address, "Фактический адрес" %>
+      <%= f.text_field :f_address %>
+
+
+
+     

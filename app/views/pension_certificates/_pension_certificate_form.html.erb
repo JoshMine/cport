@@ -1,0 +1,12 @@
+
+      <%= f.label :snils , "СНИЛС"%>
+      <%= f.text_field :snils%>
+
+      <%= f.label :doc_file, "Копия документа" %>
+      
+      <%if !@pension_certificate.doc_file_file_name %>
+        <%= f.file_field :doc_file %>
+      <% else %>  
+        <%= image_tag @pension_certificate.doc_file.url(:thumb), :class => "img-rounded" %>
+      <%end%>
+      <br/>

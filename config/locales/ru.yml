@@ -5,6 +5,8 @@ ru:
   help: "Помощь"
   signin: "Войти"
   signout: "Выйти"
+  profile: "Профиль"
+  settings: "Настройки"
   about: "О Проекте"
   contacts: "Контакты"
   news: "Новости"

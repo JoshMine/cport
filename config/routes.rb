@@ -19,29 +19,29 @@ Cport::Application.routes.draw do
     match '/about',   to: 'static_pages#about'
     match '/contacts', to: 'static_pages#contacts'
     
-    match '/portfolio',         to: 'portfolios#show'
-    match '/portfolio/create',  to: 'portfolios#new'
-    match '/portfolio/addparticipant', to: 'portfolios#addparticipant'
+   # match '/portfolio',         to: 'portfolios#show'
+   # match '/portfolio/create',  to: 'portfolios#new'
+   # match '/portfolio/addparticipant', to: 'portfolios#addparticipant'
      
-    match '/participant/documents', to: 'participants#documents'
-    match '/participant/property', to: 'participants#property'
-    match '/participant/incoming', to: 'participants#incoming'
-    match '/participant/costs', to: 'participants#costs'
+   # match '/participant/documents', to: 'participants#documents'
+   # match '/participant/property', to: 'participants#property'
+   # match '/participant/incoming', to: 'participants#incoming'
+   # match '/participant/costs', to: 'participants#costs'
     
 
    
     resources :users
     resources :sessions, only: [:new, :create, :destroy]
-    resources :portfolios, only: [:new, :show, :create, :addparticipant] # do #, only: [:new, :show, :create, :addparticipant, :destroy]
-    resources :participants #, only: [:new, :create, :show, :edit, :update, :destroy, :documents]# do
-    resources :passports
-    resources :drive_licenses
-    resources :pension_certificates
-    resources :tin_certificates
-    resources :oversea_passports
-    resources :flats
-    resources :cars
-    resources :main_jobs
+   # resources :portfolios, only: [:new, :show, :create, :addparticipant] # do #, only: [:new, :show, :create, :addparticipant, :destroy]
+   # resources :participants #, only: [:new, :create, :show, :edit, :update, :destroy, :documents]# do
+   # resources :passports
+   # resources :drive_licenses
+   # resources :pension_certificates
+   # resources :tin_certificates
+   # resources :oversea_passports
+   # resources :flats
+   # resources :cars
+   # resources :main_jobs
    # end
    # end
 

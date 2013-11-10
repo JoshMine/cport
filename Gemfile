@@ -6,8 +6,7 @@ gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
-#gem 'mysql', '2.8.1'
-#gem "mysql2"
+gem "mysql2"
 gem "paperclip", "~> 3.0"
 gem 'russian', '~> 0.6.0'
 gem "select2-rails"
@@ -35,12 +34,6 @@ gem "jquery-ui-rails", "~> 4.0.3"
 group :test do
   gem 'capybara', '1.1.2'
 end
-
-group :production do
-  gem 'activerecord-postgresql-adapter'
-  gem 'pg', '0.12.2'
-end
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,6 +1,12 @@
 Cport::Application.routes.draw do
 
 
+  get "fincomes/create"
+
+  get "fincomes/edit"
+
+  get "fincomes/delete"
+
   scope "(:locale)", :locale => /ru|en/ do
     
     match '/:locale' => 'static_pages#home'

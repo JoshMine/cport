@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
-#gem 'rails', '3.2.13'
-gem 'rails', '4.0.0'
+gem 'rails', '3.2.13'
+#gem 'rails', '4.0.0'
 gem "mysql2"
 
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'devise'
 
 gem 'mini_magick'
-gem 'carrierwave'
+gem "paperclip", "~> 3.0"
+#gem 'carrierwave'
 gem 'kaminari'
 
 gem 'bootstrap-sass', '2.1'
@@ -21,11 +23,11 @@ gem "therubyracer"
 # in production environments by default.
 group :assets do
   # Use SCSS for stylesheets
-  gem 'sass-rails', '~> 4.0.0'
+  gem 'sass-rails'#, '~> 4.0.0'
 # Use Uglifier as compressor for JavaScript assets
   gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-  gem 'coffee-rails', '~> 4.0.0'
+  gem 'coffee-rails'#, '~> 4.0.0'
 end
 
 group :development, :test do
@@ -46,7 +48,9 @@ end
 
 group :development do
   # Deploy with Capistrano
-  gem 'capistrano', '~> 3.0.1'
+  gem 'capistrano', '~> 3.0', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
   gem 'capistrano-ext'
   # To use debugger
   gem 'debugger'
@@ -54,6 +58,7 @@ end
 
 gem 'jquery-rails', '2.2.1'
 gem "jquery-ui-rails", "~> 4.0.3"
+gem 'rb-readline'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

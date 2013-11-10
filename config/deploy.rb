@@ -42,7 +42,7 @@ namespace :deploy do
 
   desc "Run pending migrations on already deployed code"
   task :migrate do
-    run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec rake db:migrate"
+    run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake db:migrate"
   end
 
   desc 'Restart application'
@@ -64,11 +64,11 @@ namespace :deploy do
 
   namespace :assets do
     task :precompile do
-      run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec rake assets:precompile"
+      run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake assets:precompile"
     end
 
     task :clean do
-      run "cd #{current_path}; RAILS_ENV=#{stage} bundle exec rake assets:clean"
+      run "cd #{current_path}; RAILS_ENV=#{rails_env} bundle exec rake assets:clean"
     end
   end
 

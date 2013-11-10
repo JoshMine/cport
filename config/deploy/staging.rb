@@ -1,4 +1,5 @@
 set :stage, :staging
+set :rails_env, "staging"
 set :branch, 'develop'
 set :deploy_to, '/var/www/staging'
 

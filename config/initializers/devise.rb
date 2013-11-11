@@ -6,7 +6,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "noresponse@finstrument.com"
+  config.mailer_sender = "noreply@finstrument.com"
   config.secret_key = 'c05f2b4202001a80951c8e2be3fe221c34d3b8f0b5add345ec7b7d73f7aebeca74573df1036e85131a61010b0d5255e93acea3db7be14df57c69a7f7b32fb00d'
 
 

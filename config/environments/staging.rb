@@ -5,7 +5,7 @@ Cport::Application.configure do
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
@@ -45,7 +45,7 @@ Cport::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
-  config.action_mailer.default_url_options = { :host => "dev.finstrument.com" }
+  config.action_mailer.default_url_options = {:host => "dev.finstrument.com"}
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
@@ -68,13 +68,13 @@ Cport::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address:              'smtp.mastermail.ru',
-      port:                 465,
-      domain:               'finstrument.com',
-      user_name:            'noreply@finstrument.com',
-      password:             'SsQwer!23',
-      authentication:       'plain',
-      enable_starttls_auto: true
+      address: 'smtp.mastermail.ru',
+      port: 25,
+      domain: 'finstrument.com',
+      user_name: 'noreply@finstrument.com',
+      password: 'SsQwer!23'
+      #authentication:       'plain',
+      #enable_starttls_auto: true
   }
 
 end

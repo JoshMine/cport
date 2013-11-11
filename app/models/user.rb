@@ -2,47 +2,72 @@
 #
 # Table name: users
 #
-#  id                  :integer          not null, primary key
-#  name                :string(255)
-#  email               :string(255)
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
-#  password_digest     :string(255)
-#  remember_token      :string(255)
-#  admin               :boolean          default(FALSE)
-#  avatar_file_name    :string(255)
-#  avatar_content_type :string(255)
-#  avatar_file_size    :integer
-#  avatar_updated_at   :datetime
+#  id                     :integer          not null, primary key
+#  name                   :string(255)
+#  email                  :string(255)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  password_digest        :string(255)
+#  admin                  :boolean          default(FALSE)
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
+#  encrypted_password     :string(255)      default(""), not null
+#  reset_password_token   :string(255)
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  current_sign_in_ip     :string(255)
+#  last_sign_in_ip        :string(255)
+#  confirmation_token     :string(255)
+#  confirmed_at           :datetime
+#  confirmation_sent_at   :datetime
+#  unconfirmed_email      :string(255)
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation, :avatar
-  has_secure_password
-  
-  has_one  :portfolio
-  #has_one  :person
-  
-  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "http://placehold.it/100x100"
-  
-  before_save { |user| user.email = email.downcase }
-  before_save :create_remember_token
-  
-  # Validator for data
-  validates :name, presence: true, length: { maximum: 50 }
-  
-  # RegEx for email
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, 
-                    format: { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
-  
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
-  
-  private
+  # Include default devise modules. Others available are:
+  # , :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-    def create_remember_token
-      self.remember_token = SecureRandom.urlsafe_base64
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :avatar
+  attr_accessible :provider, :uid, :name
+  devise :omniauthable, :omniauth_providers => [:facebook]
+
+  has_one :portfolio
+  #has_one  :person
+
+  has_attached_file :avatar, :styles => {:medium => "300x300>", :thumb => "100x100>"}, :default_url => "http://placehold.it/100x100"
+
+  before_save { |user| user.email = email.downcase }
+
+  # Validator for data
+  validates :name, presence: true, length: {maximum: 50}
+
+  def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    unless user
+      user = User.create(name: auth.extra.raw_info.name,
+                         provider: auth.provider,
+                         uid: auth.uid,
+                         email: auth.info.email,
+                         password: Devise.friendly_token[0, 20]
+      )
     end
+    user
+  end
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
+
 end

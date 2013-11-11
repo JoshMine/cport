@@ -1,0 +1,27 @@
+ru:
+  activerecord:
+    errors:
+      models:
+        agent:
+          attributes:
+            password:
+              too_short: Слишком короткий
+              blank: 'не заполнено'
+            current_password:
+              invalid: 'не верный'
+            avatar:
+              blank: 'не установлено'
+            current_password:
+              blank: 'не заполнено'
+            email:
+              blank: 'не заполнено'
+    models:
+      user: 'Пользователь'
+    attributes:
+      user:
+        name: 'ФИО'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение Пароля'
+        email: 'Емайл'
+        remember_me: 'Запомнить меня'
+        avatar: 'Аватар'

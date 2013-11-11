@@ -7,9 +7,8 @@
     <li>
       <%= user.name %>
       <%= link_to "Профиль", user %>
-      <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+      <% if current_user.admin? && !current_user.eql?(user) %>
+        | <%= link_to "delete", user, method: :delete, data: {confirm: "You sure?"} %>
       <% end %>
     </li>
   <% end %>

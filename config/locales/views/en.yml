@@ -1,0 +1,11 @@
+en:
+  layouts:
+    header:
+      main: 'Main'
+      help: 'Help'
+      profile: 'Profile'
+      settings: 'Settings'
+      exit: 'Log Out'
+      portfolio: 'Portfolio'
+      sign_in: Sign In
+      project: 'Finstrument'

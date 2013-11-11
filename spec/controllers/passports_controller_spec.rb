@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe ParticipantPassportsController do
+describe PassportsController do
 
   describe "GET 'new'" do
     it "returns http success" do

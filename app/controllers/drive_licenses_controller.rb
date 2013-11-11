@@ -1,6 +1,6 @@
 class DriveLicensesController < ApplicationController
   
-  before_filter :signed_in_user
+  before_filter :authenticate_user!
   
   layout "participants"
   

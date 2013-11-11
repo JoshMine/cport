@@ -1,37 +1,43 @@
 Cport::Application.routes.draw do
 
+  devise_for :users, :controllers => {#:registrations => "users",
+                                      :omniauth_callbacks => "users/omniauth_callbacks"}
 
   scope "(:locale)", :locale => /ru|en/ do
-    
-    match '/:locale' => 'static_pages#home'
-    
-    root :to => 'static_pages#home'
-    
-    match '/signup',  to: 'users#new'
-    #match '/profile', to: 'users#show'
-    #match '/settings', to: 'users#edit'
-    match '/signin',  to: 'sessions#new'
-    match '/signout', to: 'sessions#destroy', via: :delete
-    
 
-    match '/home',    to: 'static_pages#home'
-    match '/help',    to: 'static_pages#help'
-    match '/about',   to: 'static_pages#about'
+    match '/:locale' => 'static_pages#home'
+
+    root :to => 'static_pages#home'
+
+    #match '/signup',  to: 'users#new'
+    ##match '/profile', to: 'users#show'
+    ##match '/settings', to: 'users#edit'
+    #match '/signin',  to: 'sessions#new'
+    #match '/signout', to: 'sessions#destroy', via: :delete
+
+    as :user do
+      get 'signin', to: 'devise/sessions#new'
+      get 'signup', to: 'registrations#new'
+      get 'signout', to: 'devise/sessions#destroy'
+    end
+
+    match '/home', to: 'static_pages#home'
+    match '/help', to: 'static_pages#help'
+    match '/about', to: 'static_pages#about'
     match '/contacts', to: 'static_pages#contacts'
-    
-    match '/portfolio',         to: 'portfolios#show'
-    match '/portfolio/create',  to: 'portfolios#new'
+
+    match '/portfolio', to: 'portfolios#show'
+    match '/portfolio/create', to: 'portfolios#new'
     match '/portfolio/addparticipant', to: 'portfolios#addparticipant'
-     
+
     match '/participant/documents', to: 'participants#documents'
     match '/participant/property', to: 'participants#property'
     match '/participant/incoming', to: 'participants#incoming'
     match '/participant/costs', to: 'participants#costs'
-    
 
-   
+
     resources :users
-    resources :sessions, only: [:new, :create, :destroy]
+    #resources :sessions, only: [:new, :create, :destroy]
     resources :portfolios, only: [:new, :show, :create, :addparticipant] # do #, only: [:new, :show, :create, :addparticipant, :destroy]
     resources :participants #, only: [:new, :create, :show, :edit, :update, :destroy, :documents]# do
     resources :passports
@@ -42,11 +48,8 @@ Cport::Application.routes.draw do
     resources :flats
     resources :cars
     resources :main_jobs
-   # end
-   # end
-
-    
-
+    # end
+    # end
 
 
     # The priority is based upon order of creation:
@@ -105,5 +108,5 @@ Cport::Application.routes.draw do
     # This is a legacy wild controller route that's not recommended for RESTful applications.
     # Note: This route will make all actions in every controller accessible via GET requests.
     # match ':controller(/:action(/:id))(.:format)'
-  end  
+  end
 end

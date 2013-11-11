@@ -1,0 +1,20 @@
+comon: &comon
+  FACEBOOK_CONSUMER_KEY: 199167960266607
+  FACEBOOK_CONSUMER_SECRET: 1231378774f4cb51c3d744bbe1ba6ef9
+
+test:
+  <<: *comon
+
+development:
+  <<: *comon
+  # host localhost.dev
+  FACEBOOK_CONSUMER_KEY: 696755833669419
+  FACEBOOK_CONSUMER_SECRET: 68e1e37713976b96f17318728ccee513
+
+staging:
+  <<: *comon
+
+production:
+  <<: *comon
+  FACEBOOK_CONSUMER_KEY: "**"
+  FACEBOOK_CONSUMER_SECRET: "**"

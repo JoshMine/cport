@@ -1,5 +1,8 @@
 # Check server configuration for capistrano deploy
 bundle exec cap staging deploy:check  --trace
 
+# Deploy STAGINGenvironment
+cap staging deploy
+
 # create DB on server
 CREATE DATABASE cport_staging   DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;

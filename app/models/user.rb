@@ -7,7 +7,6 @@
 #  email                  :string(255)
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  password_digest        :string(255)
 #  admin                  :boolean          default(FALSE)
 #  avatar_file_name       :string(255)
 #  avatar_content_type    :string(255)
@@ -26,6 +25,8 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string(255)
+#  provider               :string(255)
+#  uid                    :string(255)
 #
 
 class User < ActiveRecord::Base

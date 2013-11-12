@@ -1,0 +1,27 @@
+%h1 Listing loans
+.row
+  .span2.pull-right= link_to 'New Loan', new_loan_path, class: 'btn btn-info btn-mini'
+
+- unless @loans.blank?
+  %table.table.table-hover.table-condensed
+    %tr
+      %th= loan_column('category')
+      %th= loan_column('amount')
+      %th= loan_column('monthly_payment')
+      %th= loan_column('date_payment')
+      %th
+
+    - @loans.each do |loan|
+      %tr
+        %td= t(loan.category, scope: 'activerecord.attributes.loan.categories')
+        %td= loan.amount
+        %td= loan.monthly_payment
+        %td= loan.date_payment
+        %td
+          .btn-group
+            = link_to 'Show', loan, class: 'btn btn-mini'
+            = link_to 'Edit', edit_loan_path(loan), class: 'btn btn-mini'
+            = link_to 'Destroy', loan, class: 'btn btn-mini', :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= paginate(@loans)
+

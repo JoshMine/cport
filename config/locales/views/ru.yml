@@ -4,8 +4,13 @@ ru:
       main: 'Главная'
       help: 'Помощь'
       profile: 'Профайл'
+      loans: 'Кредиты'
       settings: 'Найстройки'
       exit: 'Выйти'
       portfolio: 'Портфолио'
       sign_in: 'Войти'
       project: 'Финструмент'
+  controllers:
+    loans:
+      flash_created: "Кредит добавлен"
+      flash_updated: "Кредит обновлен"

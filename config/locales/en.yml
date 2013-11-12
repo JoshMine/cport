@@ -11,3 +11,5 @@ en:
   about: "About"
   contacts: "Contacts"
   news: "News"
+  global:
+    send: 'Send'

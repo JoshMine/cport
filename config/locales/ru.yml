@@ -8,3 +8,5 @@ ru:
   about: "О Проекте"
   contacts: "Контакты"
   news: "Новости"
+  global:
+    send: 'Отправить'

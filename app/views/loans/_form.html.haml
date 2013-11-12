@@ -1,0 +1,32 @@
+= form_for @loan do |f|
+  .row
+    .span2= f.label :category
+    .span3= f.select :category, loan_category_select_map, { include_blank: false }
+  .row
+    .span2= f.label :loan_type
+    .span3= f.select :loan_type, loan_type_select_map, { include_blank: false }
+  .row
+
+    .span2= f.label :amount
+    .span2= f.number_field :amount
+    .span1= f.select :currency_id, currency_select_map, { include_blank: false }
+  .row
+    .span2= f.label :term
+    .span3= f.number_field :term
+  .row
+    .span2= f.label :issue_date
+    .span3= f.date_select :issue_date
+  .row
+    .span2= f.label :monthly_payment
+    .span3= f.number_field :monthly_payment
+  .row
+    .span2= f.label :rate
+    .span3= f.text_field :rate
+  .row
+    .span2= f.label :date_payment
+    .span3= f.select :date_payment, day_select_map
+  .row
+    .span2= f.label :required_payment
+    .span3= f.check_box :required_payment
+  .row
+    .span2.offset2= f.submit t('global.send'), class: 'btn btn-success'

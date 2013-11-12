@@ -17,6 +17,7 @@ ru:
               blank: 'не заполнено'
     models:
       user: 'Пользователь'
+      loan: 'Кредит'
     attributes:
       user:
         name: 'ФИО'
@@ -25,3 +26,20 @@ ru:
         email: 'Емайл'
         remember_me: 'Запомнить меня'
         avatar: 'Аватар'
+      loan:
+        amount: Сумма
+        category: Категория
+        date_payment: Дата оплаты
+        issue_date: Дата заема
+        loan_type: Тип
+        monthly_payment: Сумма месячного платежа
+        rate: Процентная ставка
+        required_payment: Обязательный платеж
+        term: Период (мес)
+        categories:
+          mortgage: 'Ипотека'
+          car_loan: 'Автокредит'
+          consumer_credit: 'Потребительский кредит'
+        types:
+          differentiated: 'Дифферецированный'
+          annuity: 'Аннуитетный'

@@ -1,5 +1,8 @@
 Cport::Application.routes.draw do
 
+  resources :loans
+
+
   devise_for :users, :controllers => {#:registrations => "users",
                                       :omniauth_callbacks => "users/omniauth_callbacks"}
 

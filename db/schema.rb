@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131111084142) do
+ActiveRecord::Schema.define(:version => 20131112134100) do
 
   create_table "cars", :force => true do |t|
     t.integer  "participant_id"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(:version => 20131111084142) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "participant_id"
+  end
+
+  create_table "currencies", :force => true do |t|
+    t.string   "name"
+    t.string   "symbol"
+    t.boolean  "enabled",    :default => true, :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "drive_licenses", :force => true do |t|
@@ -64,6 +72,26 @@ ActiveRecord::Schema.define(:version => 20131111084142) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  create_table "loans", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "category"
+    t.string   "loan_type"
+    t.integer  "amount"
+    t.integer  "term"
+    t.datetime "issue_date"
+    t.integer  "monthly_payment"
+    t.decimal  "rate",             :precision => 10, :scale => 0
+    t.integer  "date_payment"
+    t.boolean  "required_payment"
+    t.datetime "created_at",                                      :null => false
+    t.datetime "updated_at",                                      :null => false
+    t.integer  "currency_id",                                     :null => false
+  end
+
+  add_index "loans", ["category"], :name => "index_loans_on_category"
+  add_index "loans", ["required_payment"], :name => "index_loans_on_required_payment"
+  add_index "loans", ["user_id"], :name => "index_loans_on_user_id"
 
   create_table "main_jobs", :force => true do |t|
     t.integer  "participant_id"

@@ -1,6 +1,5 @@
 @import "bootstrap";
 
-
 /* universal */
 
 html {
@@ -83,10 +82,8 @@ p {
 }
 
 img {
-    position: middle;
+  position: middle;
 }
-
-
 
 /* header */
 
@@ -163,30 +160,30 @@ input, select {
 
 /* Rating */
 
- .rating {
+.rating {
 
-    font-size: 3.5em;
-    color: #008f00;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    text-align: center;
-    padding-top: 9px;
-    font-weight: bold;
-    line-height: 1;
+  font-size: 3.5em;
+  color: #008f00;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-align: center;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
 }
 
 /* Index  */
-    
- .index {
 
-    font-size: 3.5em;
-    color: #857bb1;
-    text-transform: uppercase;
-    letter-spacing: -1px;
-    text-align: center;
-    padding-top: 9px;
-    font-weight: bold;
-    line-height: 1;
+.index {
+
+  font-size: 3.5em;
+  color: #857bb1;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  text-align: center;
+  padding-top: 9px;
+  font-weight: bold;
+  line-height: 1;
 }
 
 /* footer */
@@ -228,4 +225,14 @@ footer ul li {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+select {
+  line-height: 20px;
+  height: 30px !important;
+  margin: 0;
+}
+
+form > .row {
+  margin-bottom: 5px;
 }

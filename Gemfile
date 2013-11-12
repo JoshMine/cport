@@ -25,14 +25,15 @@ gem "therubyracer"
 # in production environments by default.
 group :assets do
   # Use SCSS for stylesheets
-  gem 'sass-rails'#, '~> 4.0.0'
-# Use Uglifier as compressor for JavaScript assets
+  gem 'sass-rails' #, '~> 4.0.0'
+                   # Use Uglifier as compressor for JavaScript assets
   gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-  gem 'coffee-rails'#, '~> 4.0.0'
+                   # Use CoffeeScript for .js.coffee assets and views
+  gem 'coffee-rails' #, '~> 4.0.0'
 end
 
 group :development, :test do
+  # `rspec-rails` needs to be in the development group so that Rails generators work.
   gem 'rspec-rails'
   gem 'annotate', '2.5.0'
   gem 'factory_girl_rails', '4.1.0'
@@ -46,6 +47,8 @@ group :test do
   gem 'vcr'
   gem 'simplecov-rcov'
   gem 'database_cleaner'
+
+  gem 'shoulda-matchers'
 end
 
 group :development do

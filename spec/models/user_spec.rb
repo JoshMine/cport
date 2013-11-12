@@ -31,18 +31,6 @@
 
 require 'spec_helper'
 
-#def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
-#  user = User.where(:provider => auth.provider, :uid => auth.uid).first
-#  unless user
-#    user = User.create(name: auth.extra.raw_info.name,
-#                       provider: auth.provider,
-#                       uid: auth.uid,
-#                       email: auth.info.email,
-#                       password: Devise.friendly_token[0, 20]
-#    )
-#  end
-#  user
-#
 describe User do
   let(:user) { FactoryGirl.create(:user, :confirmed) }
   let(:valid_fb) {
@@ -53,12 +41,14 @@ describe User do
     OmniAuth.config.add_mock(:facebook, {:uid => 'fb-uuid', info: {email: user.email}, extra: {raw_info: {name: 'raw_name'}}})
     OmniAuth.config.mock_auth[:facebook] }
 
-  before { @user = User.new(name: "Example User", email: "user@example.com") }
+  describe "validation" do
+    subject { FactoryGirl.build(:user, :confirmed) }
 
-  subject { @user }
-
-  it { should respond_to(:name) }
-  it { should respond_to(:email) }
+    it { should be_valid }
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:email) }
+    it { should validate_presence_of(:password) }
+  end
 
   describe "#find_for_facebook_oauth" do
     it "should create new user with FB" do

@@ -9,7 +9,8 @@
 
 # ������������� ��������� ���� ������ SQLite.
 /db/*.sqlite3
-
+./spec/views/*
+./spec/routing/*
 /config/database.yml
 
 # ������������� ���� ����� � ��������� ������.

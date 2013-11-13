@@ -3,6 +3,7 @@
 FactoryGirl.define do
   factory :loan do
     user { FactoryGirl.create(:user, :confirmed) }
+    currency { FactoryGirl.create(:currency) }
     category "mortgage"
     loan_type "differentiated"
     amount 1

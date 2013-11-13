@@ -1,6 +1,6 @@
-%h1 Listing loans
+%h1= t('.loans_list')
 .row
-  .span2.pull-right= link_to 'New Loan', new_loan_path, class: 'btn btn-info btn-mini'
+  .span2.pull-right= link_to t('.new_loan'), new_loan_path, class: 'btn btn-info btn-mini'
 
 - unless @loans.blank?
   %table.table.table-hover.table-condensed
@@ -19,9 +19,9 @@
         %td= loan.date_payment
         %td
           .btn-group
-            = link_to 'Show', loan, class: 'btn btn-mini'
-            = link_to 'Edit', edit_loan_path(loan), class: 'btn btn-mini'
-            = link_to 'Destroy', loan, class: 'btn btn-mini', :method => :delete, :data => { :confirm => 'Are you sure?' }
+            = link_to t('global.show'), loan, class: 'btn btn-mini'
+            = link_to t('global.edit'), edit_loan_path(loan), class: 'btn btn-mini'
+            = link_to t('global.destroy'), loan, class: 'btn btn-mini', :method => :delete, :data => { :confirm => t('global.are_you_sure') }
 
 = paginate(@loans)
 

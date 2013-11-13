@@ -10,3 +10,7 @@ ru:
   news: "Новости"
   global:
     send: 'Отправить'
+    show: 'Подробней'
+    edit: 'Изменить'
+    destroy: 'Удалить'
+    are_you_sure: 'Вы уверены?'

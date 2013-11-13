@@ -10,7 +10,14 @@ ru:
       portfolio: 'Портфолио'
       sign_in: 'Войти'
       project: 'Финструмент'
+  loans:
+    index:
+      loans_list: 'Список кредитов'
+      new_loan: 'Добавить кредит'
+    edit:
+      edit_loan: 'Кредит'
   controllers:
     loans:
       flash_created: "Кредит добавлен"
       flash_updated: "Кредит обновлен"
+

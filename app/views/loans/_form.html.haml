@@ -26,7 +26,4 @@
     .span2= f.label :date_payment
     .span3= f.select :date_payment, day_select_map
   .row
-    .span2= f.label :required_payment
-    .span3= f.check_box :required_payment
-  .row
     .span2.offset2= f.submit t('global.send'), class: 'btn btn-success'

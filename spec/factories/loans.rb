@@ -11,6 +11,5 @@ FactoryGirl.define do
     monthly_payment 1
     rate "9.99"
     date_payment 1
-    required_payment false
   end
 end

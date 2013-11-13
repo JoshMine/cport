@@ -1,8 +1,4 @@
 Cport::Application.routes.draw do
-
-  resources :loans
-
-
   devise_for :users, :controllers => {#:registrations => "users",
                                       :omniauth_callbacks => "users/omniauth_callbacks"}
 
@@ -38,7 +34,7 @@ Cport::Application.routes.draw do
     match '/participant/incoming', to: 'participants#incoming'
     match '/participant/costs', to: 'participants#costs'
 
-
+    resources :loans
     resources :users
     #resources :sessions, only: [:new, :create, :destroy]
     resources :portfolios, only: [:new, :show, :create, :addparticipant] # do #, only: [:new, :show, :create, :addparticipant, :destroy]

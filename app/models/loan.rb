@@ -5,7 +5,7 @@ class Loan < ActiveRecord::Base
   belongs_to :user
   belongs_to :currency
 
-  attr_accessible :user_id, :amount, :category, :date_payment, :issue_date, :loan_type, :monthly_payment, :rate,
+  attr_accessible :amount, :category, :date_payment, :issue_date, :loan_type, :monthly_payment, :rate,
                   :term, :currency_id
 
   validates_associated :user, :currency

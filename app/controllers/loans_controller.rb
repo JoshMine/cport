@@ -19,7 +19,7 @@ class LoansController < ApplicationController
   # GET /loans/1.json
   def show
     respond_to do |format|
-      format.html # show.html.erb
+      #format.html # show.html.erb
       format.json { render json: @loan }
     end
   end

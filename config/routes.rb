@@ -8,12 +8,6 @@ Cport::Application.routes.draw do
 
     root :to => 'static_pages#home'
 
-    #match '/signup',  to: 'users#new'
-    ##match '/profile', to: 'users#show'
-    ##match '/settings', to: 'users#edit'
-    #match '/signin',  to: 'sessions#new'
-    #match '/signout', to: 'sessions#destroy', via: :delete
-
     as :user do
       get 'signin', to: 'devise/sessions#new'
       get 'signup', to: 'registrations#new'
@@ -34,8 +28,10 @@ Cport::Application.routes.draw do
     match '/participant/incoming', to: 'participants#incoming'
     match '/participant/costs', to: 'participants#costs'
 
-    resources :loans
     resources :users
+    resources :loans
+    resources :incomes
+
     #resources :sessions, only: [:new, :create, :destroy]
     resources :portfolios, only: [:new, :show, :create, :addparticipant] # do #, only: [:new, :show, :create, :addparticipant, :destroy]
     resources :participants #, only: [:new, :create, :show, :edit, :update, :destroy, :documents]# do

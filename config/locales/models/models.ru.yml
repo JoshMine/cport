@@ -18,6 +18,7 @@ ru:
     models:
       user: 'Пользователь'
       loan: 'Кредит'
+      income: 'Доход'
     attributes:
       user:
         name: 'ФИО'
@@ -43,3 +44,14 @@ ru:
         types:
           differentiated: 'Дифферецированный'
           annuity: 'Аннуитетный'
+      income:
+        amount: 'Сумма'
+        currency: 'Валюта'
+        date_in: 'Дата'
+        income_type: 'Тип дохода'
+        types:
+          mine_job: 'Основная работа'
+          other_job: 'Другая работа'
+          other_income: 'Другие доходы'
+          estate_leasing: 'Аренда жилья'
+

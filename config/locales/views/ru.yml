@@ -5,19 +5,29 @@ ru:
       help: 'Помощь'
       profile: 'Профайл'
       loans: 'Кредиты'
+      incomes: 'Доходы'
       settings: 'Найстройки'
       exit: 'Выйти'
       portfolio: 'Портфолио'
       sign_in: 'Войти'
       project: 'Финструмент'
+  controllers:
+    loans:
+      flash_created: "Кредит добавлен"
+      flash_updated: "Кредит обновлен"
+    incomes:
+      flash_created: "Доход добавлен"
+      flash_updated: "Доход обновлен"
   loans:
     index:
       loans_list: 'Список кредитов'
       new_loan: 'Добавить кредит'
     edit:
       edit_loan: 'Кредит'
-  controllers:
-    loans:
-      flash_created: "Кредит добавлен"
-      flash_updated: "Кредит обновлен"
+  incomes:
+    index:
+      incomes_list: 'Список доходов'
+      new_income: 'Добавить доход'
+    edit:
+      edit_income: 'Доход'
 

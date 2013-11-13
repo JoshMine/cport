@@ -1,0 +1,13 @@
+%h1= t('.incomes_list')
+.row
+  .span2.pull-right= link_to t('.new_income'), new_income_path, remote: true, class: 'btn btn-info btn-mini'
+
+.incomes.table.table-hover.table-condensed
+  = render 'header'
+  = render @incomes
+.new_income
+
+= paginate(@incomes)
+
+
+

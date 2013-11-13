@@ -16,6 +16,7 @@ gem 'kaminari'
 
 gem 'bootstrap-sass', '2.1'
 gem 'haml-rails'
+gem 'bourbon'
 gem 'russian', '~> 0.6.0'
 gem "select2-rails"
 gem "execjs"

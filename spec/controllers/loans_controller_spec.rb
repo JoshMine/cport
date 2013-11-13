@@ -5,7 +5,7 @@ describe LoansController do
   let!(:loan2) { FactoryGirl.create(:loan) }
   let!(:valid_attributes) {
     attr = FactoryGirl.build(:loan).attributes
-    attr.delete('id'); attr.delete('created_at'); attr.delete('updated_at')
+    attr.delete('id'); attr.delete('user_id');  attr.delete('created_at'); attr.delete('updated_at')
     attr
   }
 
@@ -68,14 +68,14 @@ describe LoansController do
       it "assigns a newly created but unsaved loan as @loan" do
         # Trigger the behavior that occurs when invalid params are submitted
         Loan.any_instance.stub(:save).and_return(false)
-        post :create, {:loan => {"user_id" => "invalid value"}}
+        post :create, {:loan => {"amount" => "invalid value"}}
         assigns(:loan).should be_a_new(Loan)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Loan.any_instance.stub(:save).and_return(false)
-        post :create, {:loan => {"user_id" => "invalid value"}}
+        post :create, {:loan => {"amount" => "invalid value"}}
         response.should render_template("new")
       end
     end
@@ -104,14 +104,14 @@ describe LoansController do
         it "assigns the loan as @loan" do
           # Trigger the behavior that occurs when invalid params are submitted
           Loan.any_instance.stub(:save).and_return(false)
-          put :update, {:id => loan.to_param, :loan => { "user_id" => "invalid value" }}
+          put :update, {:id => loan.to_param, :loan => { "amount" => "invalid value" }}
           assigns(:loan).should eq(loan)
         end
 
         it "re-renders the 'edit' template" do
           # Trigger the behavior that occurs when invalid params are submitted
           Loan.any_instance.stub(:save).and_return(false)
-          put :update, {:id => loan.to_param, :loan => { "user_id" => "invalid value" }}
+          put :update, {:id => loan.to_param, :loan => { "amount" => "invalid value" }}
           response.should render_template("edit")
         end
       end

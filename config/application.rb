@@ -66,7 +66,7 @@ module Cport
       # g.orm :active_record
       g.template_engine :haml
       g.stylesheets false
-      g.test_framework :rspec, views: false, fixture: true
+      g.test_framework :rspec, views: false, requests: false, fixture: true
       g.fixture_replacement :factory_girl
     end
 

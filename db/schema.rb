@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131113071751) do
+ActiveRecord::Schema.define(:version => 20131113083913) do
 
   create_table "cars", :force => true do |t|
     t.integer  "participant_id"
@@ -71,6 +71,16 @@ ActiveRecord::Schema.define(:version => 20131113071751) do
     t.float    "price"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "incomes", :force => true do |t|
+    t.date     "date_in"
+    t.string   "income_type"
+    t.integer  "amount"
+    t.integer  "currency_id"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "loans", :force => true do |t|

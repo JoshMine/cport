@@ -19,7 +19,6 @@
         %td= loan.date_payment
         %td
           .btn-group
-            = link_to t('global.show'), loan, class: 'btn btn-mini'
             = link_to t('global.edit'), edit_loan_path(loan), class: 'btn btn-mini'
             = link_to t('global.destroy'), loan, class: 'btn btn-mini', :method => :delete, :data => { :confirm => t('global.are_you_sure') }
 

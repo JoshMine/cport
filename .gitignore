@@ -11,6 +11,7 @@
 /db/*.sqlite3
 ./spec/views/*
 ./spec/routing/*
+./spec/requests/*
 /config/database.yml
 
 # ������������� ���� ����� � ��������� ������.

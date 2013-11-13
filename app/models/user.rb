@@ -38,6 +38,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :avatar
   attr_accessible :provider, :uid, :name
+
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   has_one :portfolio

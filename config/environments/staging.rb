@@ -76,5 +76,9 @@ Cport::Application.configure do
       #authentication:       'plain',
       #enable_starttls_auto: true
   }
-
+  config.middleware.use ExceptionNotifier, :email => {
+      :email_prefix => "[ERROR FinIn] ",
+      :sender_address => %{"notifier" <noreply@finstrument.com>},
+      :exception_recipients => %w{rebisall@gmail.com}
+  }
 end

@@ -1,10 +1,10 @@
 FactoryGirl.define do
-  factory :income do
+  factory :outcome do
     user { FactoryGirl.create(:user, :confirmed) }
     currency { FactoryGirl.create(:currency) }
 
-    date_in "2013-11-13"
-    income_type "mine_job"
-    amount 1
+    date_out "2013-11-14"
+    outcome_type "estate_leasing"
+    amount 100
   end
 end

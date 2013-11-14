@@ -15,6 +15,7 @@
                 <li><%= link_to t('.profile'), current_user %></li>
                 <li><%= link_to t('.loans'), loans_path %></li>
                 <li><%= link_to t('.incomes'), incomes_path %></li>
+                <li><%= link_to t('.outcomes'), outcomes_path %></li>
                 <li><%= link_to t('.settings'), edit_user_path(current_user) %></li>
                 <% if !current_user.portfolio %>
                   <li class="divider"></li>

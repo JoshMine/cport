@@ -6,6 +6,7 @@ ru:
       profile: 'Профайл'
       loans: 'Кредиты'
       incomes: 'Доходы'
+      outcomes: 'Расходы'
       settings: 'Найстройки'
       exit: 'Выйти'
       portfolio: 'Портфолио'
@@ -18,6 +19,9 @@ ru:
     incomes:
       flash_created: "Доход добавлен"
       flash_updated: "Доход обновлен"
+    outcomes:
+      flash_created: "Расход добавлен"
+      flash_updated: "Расход обновлен"
   loans:
     index:
       loans_list: 'Список кредитов'
@@ -30,4 +34,10 @@ ru:
       new_income: 'Добавить доход'
     edit:
       edit_income: 'Доход'
+  outcomes:
+    index:
+      outcomes_list: 'Список расходов'
+      new_outcome: 'Добавить расход'
+    edit:
+      edit_outcome: 'Расход'
 

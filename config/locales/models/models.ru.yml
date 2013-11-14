@@ -19,6 +19,7 @@ ru:
       user: 'Пользователь'
       loan: 'Кредит'
       income: 'Доход'
+      income: 'Расход'
     attributes:
       user:
         name: 'ФИО'
@@ -53,5 +54,16 @@ ru:
           mine_job: 'Основная работа'
           other_job: 'Другая работа'
           other_income: 'Другие доходы'
+          estate_leasing: 'Аренда жилья'
+      outcome:
+        amount: 'Сумма'
+        currency: 'Валюта'
+        date_out: 'Дата'
+        outcome_type: 'Тип дохода'
+        required: 'Обязательный'
+        types:
+          food: 'Еда'
+          goods: 'Вещи'
+          education: 'Обучение'
           estate_leasing: 'Аренда жилья'
 

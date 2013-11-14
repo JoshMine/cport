@@ -1,0 +1,10 @@
+%h3= t('.outcomes_list')
+.row
+  .span2.pull-right= link_to t('.new_outcome'), new_outcome_path, remote: true, class: 'btn btn-info btn-mini'
+
+.outcomes.table.table-hover.table-condensed
+  = render 'header'
+  = render @outcomes
+.new_outcome
+
+= paginate(@outcomes)

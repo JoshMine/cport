@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131113083913) do
+ActiveRecord::Schema.define(:version => 20131114070715) do
 
   create_table "cars", :force => true do |t|
     t.integer  "participant_id"
@@ -131,6 +131,17 @@ ActiveRecord::Schema.define(:version => 20131113083913) do
     t.float    "monthly_income"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "outcomes", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "outcome_type"
+    t.integer  "amount"
+    t.date     "date_out"
+    t.string   "currency_id"
+    t.boolean  "required",     :default => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "oversea_passports", :force => true do |t|

@@ -1,6 +1,3 @@
-#SSHKit.config.command_map[:rake]  = "bundle exec rake"
-#SSHKit.config.command_map[:rails] = "bundle exec rails"
-
 set :application, 'cport'
 set :repo_url, 'git@github.com:JoshMine/cport.git'
 set :bundle_roles, :all
@@ -64,11 +61,6 @@ namespace :deploy do
     task :bundle_new_release do
       run "cd #{current_path} && bundle install --deployment --quiet --without development test cucumber"
     end
-  end
-
-  desc 'Run the precompile'
-  task :compile_assets do
-    run "cd #{current_path} && bundle exec rake assets:precompile"
   end
 
   after :finishing, 'deploy:cleanup'

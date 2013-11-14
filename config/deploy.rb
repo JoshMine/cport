@@ -1,6 +1,6 @@
 set :application, 'cport'
 set :repo_url, 'git@github.com:JoshMine/cport.git'
-
+set :bundle_roles, :all
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 set :scm, :git

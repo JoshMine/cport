@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.14'
 #gem 'rails', '4.0.0'
 gem "mysql2"
-gem 'exception_notification'
+gem 'exception_notification', :require => 'exception_notifier'
 
 #gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth'

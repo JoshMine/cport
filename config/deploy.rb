@@ -58,8 +58,16 @@ namespace :deploy do
   end
 
   namespace :bundler do
-    task :bundle_new_release  do
+    task :bundle_new_release do
       run "cd #{current_path} && bundle install --deployment --quiet --without development test cucumber"
+    end
+  end
+
+
+  namespace :assets do
+    desc 'Run the precompile'
+    task :precompile, :roles => :web, :except => {:no_release => true} do
+      %x{bundle exec rake assets:precompile}
     end
   end
 

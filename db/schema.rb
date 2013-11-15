@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115070836) do
+ActiveRecord::Schema.define(:version => 20131115181649) do
 
   create_table "cars", :force => true do |t|
     t.integer  "participant_id"
@@ -83,6 +83,9 @@ ActiveRecord::Schema.define(:version => 20131115070836) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "incomes", ["currency_id"], :name => "index_incomes_on_currency_id"
+  add_index "incomes", ["user_id"], :name => "index_incomes_on_user_id"
+
   create_table "loans", :force => true do |t|
     t.integer  "user_id"
     t.string   "category"
@@ -99,6 +102,7 @@ ActiveRecord::Schema.define(:version => 20131115070836) do
   end
 
   add_index "loans", ["category"], :name => "index_loans_on_category"
+  add_index "loans", ["currency_id"], :name => "index_loans_on_currency_id"
   add_index "loans", ["user_id"], :name => "index_loans_on_user_id"
 
   create_table "main_jobs", :force => true do |t|
@@ -143,6 +147,9 @@ ActiveRecord::Schema.define(:version => 20131115070836) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
   end
+
+  add_index "outcomes", ["currency_id"], :name => "index_outcomes_on_currency_id"
+  add_index "outcomes", ["user_id"], :name => "index_outcomes_on_user_id"
 
   create_table "oversea_passports", :force => true do |t|
     t.integer  "participant_id"

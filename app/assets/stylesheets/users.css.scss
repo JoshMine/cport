@@ -1,0 +1,20 @@
+.dashboard {
+  .row {
+    margin-left: 0;
+    .span4 {
+      margin-left: 5px;
+    }
+  }
+  .box {
+    height: 220px;
+    border: 1px solid gray;
+    .box_head {
+      margin: 5px;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+}
+
+.small >div {
+  font-size: 0.8em;
+}

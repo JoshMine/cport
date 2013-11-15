@@ -1,0 +1,46 @@
+.dashboard
+  .row
+    .span5.box
+      .row.box_head
+        .span2 My Incomes
+        .span1.pull-right= link_to('more', incomes_path)
+      .row.small
+        - @user_presenter.dashboard_incomes.each do |month, amount_row|
+          .span1
+            %div= month
+            - amount_row.each do |amount, currency|
+              %div
+                = amount
+                = currency
+
+    -#.span4.box.rate
+      .row
+        %h3 My Index
+        %h2 45
+    .span5.box
+      .row.box_head
+        .span2 My Outcomes
+        .span1.pull-right= link_to('more', outcomes_path)
+      .row.small
+        - @user_presenter.dashboard_outcomes.each do |month, amount_row|
+          .span1
+            %div= month
+            - amount_row.each do |amount, currency|
+              %div
+                = amount
+                = currency
+  %div &nbsp;
+  .row
+    .span5.box
+      .row.box_head
+        .span2 My Loans
+        .span1.pull-right= link_to('more', loans_path)
+      .row.small
+        = render partial: 'loans', locals: {loans: @user_presenter.dashboard_loans}
+
+    .span5.box
+      .row.box_head
+        .span2 My Wishes
+        .span1.pull-right= link_to('more', wishes_path)
+      .row.small
+        = render partial: 'wishes', locals: {wishes: @user_presenter.dashboard_wishes}

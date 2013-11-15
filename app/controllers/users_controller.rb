@@ -1,35 +1,21 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, only: [:index, :edit, :update]
-  before_filter :correct_user,   only: [:edit, :update]
-  
-  def show
-    @user = User.find(params[:id])
+  before_filter :authenticate_user!
+  before_filter :check_access, only: [:edit, :update]
+
+  def dashboard
+    @user_presenter = UserPresenter.new(current_user)
   end
-  
-  #def new
-  #  @user = User.new
-  #end
-  #
-  #def index
-  #  @users = User.paginate(page: params[:page])
-  #end
-  #
-  #def create
-  #  @user = User.new(params[:user])
-  #  if @user.save
-  #    flash[:success] = "Hello #{@user.name}. Please Signin!!!"
-  #    redirect_to signin_path
-  #  else
-  #    render 'new'
-  #  end
-  #end
-  #
+
+  def show
+    @user = current_user #User.find(params[:id])
+  end
+
   def edit
-    #@user = User.find(params[:id])     # убрано из-за пред фильтра correct_user
-  end 
-  
+    #@user = User.find(params[:id])     # убрано из-за пред фильтра check_access
+  end
+
   def update
-    #@user = User.find(params[:id])     # убрано из-за пред фильтра correct_user
+    #@user = User.find(params[:id])     # убрано из-за пред фильтра check_access
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile Updated!"
       sign_in @user
@@ -38,7 +24,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
-  
+
   #def destroy
   #  User.find(params[:id]).destroy
   #  flash[:success] = "User destroyed."
@@ -53,8 +39,8 @@ class UsersController < ApplicationController
   #    end
   #  end
   #
-    def correct_user
-      @user = User.find(params[:id])
-      redirect_to(root_path) unless current_user.eql?(@user)
-    end
+  def check_access
+    @user = User.find(params[:id])
+    redirect_to(root_path) unless current_user.eql?(@user)
+  end
 end

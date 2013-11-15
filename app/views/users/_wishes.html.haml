@@ -1,0 +1,12 @@
+.row.header
+  .span1= wish_column('name')
+  .span1= wish_column('amount')
+  .span1= wish_column('need_amount')
+  .span1= wish_column('final_date')
+
+- wishes.each do |wish|
+  = div_for(wish, class: 'row') do
+    .span1= wish.name
+    .span1= wish.amount_currency
+    .span1= wish.need_amount_currency
+    .span1= wish.final_date

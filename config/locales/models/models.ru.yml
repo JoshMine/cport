@@ -71,6 +71,6 @@ ru:
         name: 'Я хочу'
         currency: 'Валюта'
         amount: 'Сумма'
-        need_amount: 'Необходимо'
+        need_amount: 'Нужно'
         final_date: 'Дата'
 

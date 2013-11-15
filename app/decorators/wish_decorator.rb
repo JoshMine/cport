@@ -14,4 +14,12 @@ class WishDecorator < ApplicationDecorator
     decorate_date(object.final_date)
   end
 
+  def amount_currency
+    "#{object.amount} #{object.currency.name}"
+  end
+
+  def need_amount_currency
+    "#{object.need_amount} #{object.currency.name}"
+  end
+
 end

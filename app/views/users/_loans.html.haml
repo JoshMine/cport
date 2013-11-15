@@ -1,0 +1,12 @@
+.row.header
+  .span1= loan_column('category')
+  .span1= loan_column('amount')
+  .span1= loan_column('monthly_payment')
+  .span1= loan_column('date_payment')
+
+- loans.each do |loan|
+  = div_for(loan, class: 'row') do
+    .span1= loan.category
+    .span1= loan.amount
+    .span1= loan.monthly_payment
+    .span1= loan.date_payment

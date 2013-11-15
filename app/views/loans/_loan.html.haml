@@ -1,0 +1,8 @@
+= div_for(loan, class: 'row') do
+  .span3= loan.category
+  .span2= loan.amount
+  .span2= loan.monthly_payment
+  .span2= loan.date_payment
+  .span2.btn-group
+    = link_to t('global.edit'), edit_loan_path(loan), class: 'btn btn-mini'
+    = link_to t('global.destroy'), loan, class: 'btn btn-mini', :method => :delete, :data => { :confirm => t('global.are_you_sure') }

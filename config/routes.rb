@@ -4,9 +4,15 @@ Cport::Application.routes.draw do
 
   scope "(:locale)", :locale => /ru|en/ do
 
-    match '/:locale' => 'static_pages#home'
-
-    root :to => 'static_pages#home'
+    devise_scope :user do
+      authenticated :user do
+        root :to => 'users#dashboard'
+      end
+      unauthenticated :user do
+        root :to => 'static_pages#home'
+      end
+      root :to => 'static_pages#home'
+    end
 
     as :user do
       get 'signin', to: 'devise/sessions#new'

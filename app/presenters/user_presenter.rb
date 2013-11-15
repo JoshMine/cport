@@ -27,7 +27,6 @@ class UserPresenter
 
   def group_amount(rows)
     stats = {}
-    Rails.logger.debug(rows.inspect)
 
     rows.each do |row|
       month = I18n.t("date.abbr_month_names")[row['date']]

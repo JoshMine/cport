@@ -3,8 +3,8 @@ FactoryGirl.define do
     user { FactoryGirl.create(:user, :confirmed) }
     currency { FactoryGirl.create(:currency) }
 
-    date_in "2013-11-13"
+    date_in { Date.current }
     income_type "mine_job"
-    amount 1
+    amount 100
   end
 end

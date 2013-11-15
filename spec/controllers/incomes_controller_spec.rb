@@ -18,6 +18,7 @@ describe IncomesController do
     it "assigns all incomes as @incomes" do
       get :index, {}
       assigns(:incomes).should eq([income])
+      assigns(:incomes).should be_decorated
     end
   end
 

@@ -8,7 +8,7 @@ class WishesController < ApplicationController
   # GET /wishes
   # GET /wishes.json
   def index
-    @wishes = current_user.wishes.page(params[:page])
+    @wishes = current_user.wishes.page(params[:page]).decorate
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,12 +46,13 @@ class WishesController < ApplicationController
   def create
     @wish = Wish.new(params[:wish])
     @wish.user = current_user
+    @wish = @wish.decorate
 
     respond_to do |format|
       if @wish.save
         format.html { redirect_to wishes_path, notice: t(:flash_created, scope: 'controllers.wishes') }
         format.json { render json: @wish, status: :created, location: @wish }
-        format.js {}
+        format.js {  }
       else
         format.html { render action: "new" }
         format.js { render action: "new" }

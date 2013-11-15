@@ -13,7 +13,7 @@
 
     - @loans.each do |loan|
       %tr
-        %td= t(loan.category, scope: 'activerecord.attributes.loan.categories')
+        %td= loan.category
         %td= loan.amount
         %td= loan.monthly_payment
         %td= loan.date_payment

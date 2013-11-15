@@ -16,9 +16,9 @@ describe WishesController do
 
   describe "GET index" do
     it "assigns all wishes as @wishes" do
-
       get :index, {}
       assigns(:wishes).should eq([wish])
+      assigns(:wishes).should be_decorated
     end
   end
 

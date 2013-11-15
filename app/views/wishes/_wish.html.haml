@@ -2,8 +2,8 @@
   .span2= wish.name
   .span2= wish.amount
   .span2= wish.need_amount
-  .span2= wish.currency.name
-  .span2= wish.final_date
+  .span1= wish.currency.name
+  .span3= wish.final_date
   .span2.btn-group
     = link_to t('global.edit'), edit_wish_path(wish), class: 'btn btn-mini'
     = link_to t('global.destroy'), wish, class: 'btn btn-mini', :method => :delete, :data => { :confirm => t('global.are_you_sure') }

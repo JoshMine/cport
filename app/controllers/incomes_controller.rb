@@ -8,7 +8,7 @@ class IncomesController < ApplicationController
   # GET /incomes
   # GET /incomes.json
   def index
-    @incomes = current_user.incomes.page(params[:page])
+    @incomes = current_user.incomes.page(params[:page]).decorate
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,7 +32,7 @@ class IncomesController < ApplicationController
 
     respond_with(@income) do |format|
       format.html # new.html.erb
-      format.js { }
+      format.js {}
       format.json { render json: @income }
     end
   end
@@ -46,12 +46,13 @@ class IncomesController < ApplicationController
   def create
     @income = Income.new(params[:income])
     @income.user = current_user
+    @income = @income.decorate
 
     respond_to do |format|
       if @income.save
         format.html { redirect_to incomes_path, notice: t(:flash_created, scope: 'controllers.incomes') }
         format.json { render json: @income, status: :created, location: @income }
-        format.js { }
+        format.js {}
       else
         format.html { render action: "new" }
         format.js { render action: "new" }

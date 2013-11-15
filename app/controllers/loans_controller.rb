@@ -7,7 +7,7 @@ class LoansController < ApplicationController
   # GET /loans
   # GET /loans.json
   def index
-    @loans = current_user.loans.page(params[:page])
+    @loans = current_user.loans.page(params[:page]).decorate
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +20,7 @@ class LoansController < ApplicationController
   def show
     respond_to do |format|
       #format.html # show.html.erb
-      format.json { render json: @loan }
+      format.json { render json: @loan.decorate }
     end
   end
 
@@ -45,6 +45,7 @@ class LoansController < ApplicationController
   def create
     @loan = Loan.new(params[:loan])
     @loan.user = current_user
+    @loan = @loan.decorate
 
     respond_to do |format|
       if @loan.save

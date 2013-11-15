@@ -1,8 +1,8 @@
 = div_for(outcome, class: 'row') do
-  .span2= outcome.date_out
-  .span2= t(outcome.outcome_type, scope: 'activerecord.attributes.outcome.types')
+  .span3= outcome.date_out
+  .span2= outcome.outcome_type
   .span2= outcome.amount
-  .span2= outcome.currency.name
+  .span1= outcome.currency.name
   .span2= outcome.required
   .span2.btn-group
     = link_to t('global.edit'), edit_outcome_path(outcome), class: 'btn btn-mini'

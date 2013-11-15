@@ -17,6 +17,7 @@ gem 'kaminari'
 
 gem 'bootstrap-sass', '2.1'
 gem 'haml-rails'
+gem 'draper', '~> 1.3'
 gem 'bourbon'
 gem 'russian', '~> 0.6.0'
 gem "select2-rails"

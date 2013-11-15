@@ -14,3 +14,5 @@ ru:
     edit: 'Изменить'
     destroy: 'Удалить'
     are_you_sure: 'Вы уверены?'
+    'true': 'Да'
+    'false': 'Нет'

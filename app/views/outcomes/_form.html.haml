@@ -2,12 +2,9 @@
   - unless request.xhr?
     = render 'header'
   .row
-    .span2= f.date_select :date_out
+    .span3= f.date_select :date_out
     .span2= f.select :outcome_type, outcome_type_select_map, { include_blank: false }
     .span2= f.number_field :amount
     .span2= f.select :currency_id, currency_select_map, { include_blank: false }
-    .span2= f.check_box :required
-
-  .row
-    .span2.offset2
-      = f.submit t('global.send'), class: 'btn btn-success'
+    .span1= f.check_box :required
+    .span2= f.submit t('global.send'), class: 'btn btn-success'

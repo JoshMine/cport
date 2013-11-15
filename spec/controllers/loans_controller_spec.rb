@@ -18,6 +18,7 @@ describe LoansController do
     it "assigns all loans as @loans" do
       get :index
       assigns(:loans).map(&:id).should eq(@user.loan_ids)
+      assigns(:loans).should be_decorated
     end
   end
 

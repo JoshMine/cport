@@ -8,7 +8,7 @@ class OutcomesController < ApplicationController
   # GET /outcomes
   # GET /outcomes.json
   def index
-    @outcomes = current_user.outcomes.page(params[:page])
+    @outcomes = current_user.outcomes.page(params[:page]).decorate
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,6 +46,7 @@ class OutcomesController < ApplicationController
   def create
     @outcome = Outcome.new(params[:outcome])
     @outcome.user = current_user
+    @outcome = @outcome.decorate
 
     respond_to do |format|
       if @outcome.save

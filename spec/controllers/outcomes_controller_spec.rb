@@ -18,6 +18,7 @@ describe OutcomesController do
     it "assigns all outcomes as @outcomes" do
       get :index, {}
       assigns(:outcomes).should eq([outcome])
+      assigns(:outcomes).should be_decorated
     end
   end
 

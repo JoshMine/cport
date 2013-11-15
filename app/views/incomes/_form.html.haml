@@ -2,10 +2,8 @@
   - unless request.xhr?
     = render 'header'
   .row
-    .span2= f.date_select :date_in
+    .span3= f.date_select :date_in
     .span2= f.select :income_type, income_type_select_map, { include_blank: false }
     .span2= f.number_field :amount
     .span2= f.select :currency_id, currency_select_map, { include_blank: false }
-  .row
-    .span2.offset2
-      = f.submit t('global.send'), class: 'btn btn-success'
+    .span2= f.submit t('global.send'), class: 'btn btn-success'

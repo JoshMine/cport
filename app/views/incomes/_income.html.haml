@@ -1,6 +1,6 @@
 = div_for(income, class: 'row') do
-  .span2= income.date_in
-  .span2= t(income.income_type, scope: 'activerecord.attributes.income.types')
+  .span3= income.date_in
+  .span2= income.income_type
   .span2= income.amount
   .span2= income.currency.name
   .span2.btn-group

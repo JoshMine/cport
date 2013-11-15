@@ -244,3 +244,6 @@ form > .row {
     min-height: 25px;
   }
 }
+select[id*=date] {
+  width: 30%;
+}

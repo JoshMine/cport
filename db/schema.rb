@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131114070715) do
+ActiveRecord::Schema.define(:version => 20131115070836) do
 
   create_table "cars", :force => true do |t|
     t.integer  "participant_id"
@@ -263,5 +263,18 @@ ActiveRecord::Schema.define(:version => 20131114070715) do
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "wishes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "currency_id"
+    t.string   "name"
+    t.integer  "amount"
+    t.integer  "need_amount"
+    t.date     "final_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "wishes", ["user_id", "currency_id"], :name => "index_wishes_on_user_id_and_currency_id"
 
 end

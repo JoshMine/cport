@@ -20,6 +20,7 @@ ru:
       loan: 'Кредит'
       income: 'Доход'
       income: 'Расход'
+      wish: 'Желания'
     attributes:
       user:
         name: 'ФИО'
@@ -59,11 +60,17 @@ ru:
         amount: 'Сумма'
         currency: 'Валюта'
         date_out: 'Дата'
-        outcome_type: 'Тип дохода'
+        outcome_type: 'Тип расхода'
         required: 'Обязательный'
         types:
           food: 'Еда'
           goods: 'Вещи'
           education: 'Обучение'
           estate_leasing: 'Аренда жилья'
+      wish:
+        name: 'Я хочу'
+        currency: 'Валюта'
+        amount: 'Сумма'
+        need_amount: 'Необходимо'
+        final_date: 'Дата'
 

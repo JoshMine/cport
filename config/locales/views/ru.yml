@@ -6,6 +6,7 @@ ru:
       profile: 'Профайл'
       loans: 'Кредиты'
       incomes: 'Доходы'
+      wishes: 'Желания'
       outcomes: 'Расходы'
       settings: 'Найстройки'
       exit: 'Выйти'
@@ -22,6 +23,9 @@ ru:
     outcomes:
       flash_created: "Расход добавлен"
       flash_updated: "Расход обновлен"
+    wishes:
+      flash_created: 'Желание добавлено'
+      flash_updated: "Желание обновлено"
   loans:
     index:
       loans_list: 'Список кредитов'
@@ -40,4 +44,10 @@ ru:
       new_outcome: 'Добавить расход'
     edit:
       edit_outcome: 'Расход'
+  wishes:
+    index:
+      wishes_list: 'Список желаний'
+      new_wish: 'Добавить желание'
+    edit:
+      edit_wish: 'Желание'
 

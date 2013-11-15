@@ -32,6 +32,7 @@ Cport::Application.routes.draw do
     resources :incomes
     resources :outcomes
     resources :loans
+    resources :wishes
 
     #resources :sessions, only: [:new, :create, :destroy]
     resources :portfolios, only: [:new, :show, :create, :addparticipant] # do #, only: [:new, :show, :create, :addparticipant, :destroy]

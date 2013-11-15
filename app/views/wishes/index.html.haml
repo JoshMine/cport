@@ -1,0 +1,10 @@
+%h3= t('.wishes_list')
+.row
+  .span2.pull-right= link_to t('.new_wish'), new_wish_path, remote: true, class: 'btn btn-info btn-mini'
+
+.wishes.table.table-hover.table-condensed
+  = render 'header'
+  = render @wishes
+.new_wish
+
+= paginate(@wishes)
